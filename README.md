@@ -1,3 +1,9 @@
+React Typing
+
+a MERN webapp that teaches kids how to type, with a carnival theme. balloons will fill the skies with characters, that a user will have to type in. upon successfully matchin the character on the balloon with a character typed in, a dart will shoot up and pop the balloon.
+
+
+
 # Create React Express App
 
 ## About This Boilerplate

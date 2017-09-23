@@ -12,7 +12,7 @@ class User extends Component {
 
   render() {
     return (
-      <h1>This is a test</h1>
+      <h1>Mark was here!</h1>
     )
   };
 }

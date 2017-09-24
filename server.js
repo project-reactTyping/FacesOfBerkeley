@@ -7,7 +7,7 @@ const PORT = process.env.PORT || 3001;
 
 // Serve up static assets (usually on heroku)
 if (process.env.NODE_ENV === "production") {
-  app.use(express.static("client/src/App.js"));
+  app.use(express.static("/src/App.js"));
 }
 
 // Configure body parser for AJAX requests
@@ -31,7 +31,7 @@ mongoose.connect(
 // Send every request to the React app
 // Define any API routes before this runs
 app.get("*", function(req, res) {
-  res.sendFile(path.join(__dirname, "./client/src/App.js"));
+  res.sendFile(path.join(__dirname, "./src/App.js"));
 });
 
 // Start the API server

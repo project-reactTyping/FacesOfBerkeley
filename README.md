@@ -1,6 +1,6 @@
-React Typing
+Faces of Berkeley (FB)
 
-a MERN webapp that teaches kids how to type, with a carnival theme. balloons will fill the skies with characters, that a user will have to type in. upon successfully matchin the character on the balloon with a character typed in, a dart will shoot up and pop the balloon.
+we are attempting to clone facebook but with a slight twist! we are adding the ability to follow people, and doesn't require them to follow you back (like twitter), keeping the same friend module as in facebook. we are also incorporating a few extras, such as a weather station on the page to see the weather, as well as a react calendar (think google calendar, but you can export the events to a todo list), and lastly a react todo list, that will show the events from the calendar.
 
 
 

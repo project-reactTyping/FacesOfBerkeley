@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import Signin from "../components/Signin";
 
 class User extends Component {
 
@@ -12,7 +13,10 @@ class User extends Component {
 
   render() {
     return (
-      <h1>Mark was here!</h1>
+      <div>
+        <h1><center>Welcome to Faces of Berkeley!</center></h1>
+        <Signin />
+      </div>
     )
   };
 }

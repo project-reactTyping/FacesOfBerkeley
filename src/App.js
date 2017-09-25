@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
-import Typing from './component/Typing.js';
 
 
 class App extends Component {

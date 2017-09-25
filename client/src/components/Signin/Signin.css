@@ -1,0 +1,36 @@
+.boxed-view {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  height: 60vh;
+  width: 100vw;
+}
+
+.boxed-view--modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.boxed-view__box {
+  border: 1px solid;
+  padding: 2.4rem;
+  text-align: center;
+  width: 24rem;
+}
+
+.boxed-view__form {
+  display: flex;
+  flex-direction: column;
+}
+
+.button {
+  background-color: #00FFFF;
+  border: none;
+  color: black;
+  cursor: pointer;
+  line-height: 1.2;
+  text-transform: uppercase;
+}

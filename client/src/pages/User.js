@@ -8,6 +8,7 @@ import UserBar from "../components/Nav/NavComponents/UserBar";
 import Col from "../components/Nav/NavComponents/Grid/Col";
 import Row from "../components/Nav/NavComponents/Grid/Row";
 import Jumbotron from "../components/Nav/NavComponents/Jumbotron";
+import "./User.css";
 
 
 
@@ -26,7 +27,7 @@ class User extends Component {
       <Container fluid>
        <Row>
         <Col size="md-12">
-         <Jumbotron>
+         <Jumbotron className="jumbotron">
          <SearchBar
          />
          <UserBar

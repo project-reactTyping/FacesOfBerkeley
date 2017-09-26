@@ -1,5 +1,6 @@
 import React from "react";
 import "./Signin.css";
+import SignUpform from '../SignUpForm';
 
 class Signin extends React.Component {
   constructor(props) {
@@ -44,7 +45,7 @@ class Signin extends React.Component {
               <input type="submit" value="Log In"/>
             </div>
               <br />
-              <a href="/auth/facebook">Login with Facebook</a><i class="fa fa-facebook" aria-hidden="true"></i>
+              <a href="/auth/facebook">Login with Facebook</a>
               <a href="/signup">Need an Account?</a>
           </form>
         </div>

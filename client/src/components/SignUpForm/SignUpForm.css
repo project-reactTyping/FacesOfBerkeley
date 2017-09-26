@@ -1,0 +1,19 @@
+.container-signup {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  height: 60vh;
+  width: 100vw;
+}
+
+.container-view {
+  border: 1px solid;
+  padding: 2.4rem;
+  text-align: center;
+  width: 24rem;
+}
+
+.container-view-form {
+  display: flex;
+  flex-direction: column;
+}

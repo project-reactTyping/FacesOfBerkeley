@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import Signin from "../components/Signin";
 
 class User extends Component {
 
@@ -15,7 +14,6 @@ class User extends Component {
     return (
       <div>
         <h1><center>Welcome to Faces of Berkeley!</center></h1>
-        <Signin />
       </div>
     )
   };

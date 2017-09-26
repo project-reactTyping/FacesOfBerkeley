@@ -1,5 +1,4 @@
 import React from "react";
-import { Input, SignInBtn } from "../SignInForm";
 import "./Signin.css";
 
 class Signin extends React.Component {
@@ -29,22 +28,24 @@ class Signin extends React.Component {
     return (
       <div className="boxed-view">
         <div className="boxed-view__box">
-          <h2>Signin</h2>
+          <h2>Login</h2>
 
           {this.state.error ? <p>{this.state.error}</p> : undefined}
 
           <form onSubmit={this.onSubmit.bind(this)} className="boxed-view__form" action="/login" method="post">
             <div>
-              <input type="email" ref="email" name="email" autocomplete="off" placeholder="Email"/>
+              <input type="email" ref="email" name="email" placeholder="Email"/>
             </div>
             <div>
-              <input type="password" ref="password" name="password" autocomplete="off" placeholder="Password"/>
+              <input type="password" ref="password" name="password" placeholder="Password"/>
             </div>
+            <br />
             <div>
               <input type="submit" value="Log In"/>
             </div>
               <br />
-              <a href="/auth/facebook">Signin with Facebook</a>
+              <a href="/auth/facebook">Login with Facebook</a><i class="fa fa-facebook" aria-hidden="true"></i>
+              <a href="/signup">Need an Account?</a>
           </form>
         </div>
       </div>

@@ -3,6 +3,7 @@ const bodyParser = require("body-parser");
 const mongoose = require("mongoose");
 const routes = require("./routes");
 const app = express();
+var passport = require('passport');
 const PORT = process.env.PORT || 3001;
 
 // Serve up static assets (usually on heroku)
@@ -17,6 +18,13 @@ app.use(bodyParser.json());
 app.use(express.static("client/build"));
 // Add routes, both API and view
 app.use(routes);
+
+// setting up passport
+app.post('/login', passport.
+  authenticate('local', { successRedirect: '/user',
+    failureFlash: 'Invalid username or password.',
+    successFlash: 'Welcome!',
+    failureRedirect: '/login' }));
 
 // Set up promises with mongoose
 mongoose.Promise = global.Promise;

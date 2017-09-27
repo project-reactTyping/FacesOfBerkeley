@@ -15,7 +15,7 @@
 @media screen and (max-width: 360px) {
    .searchBtn {
 	   font-size: 14px;
-	   margin: 5px;
+	   /*margin: 5px;*/
 
    }
 }

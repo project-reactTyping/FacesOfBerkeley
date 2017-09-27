@@ -24,6 +24,7 @@ class User extends Component {
 
   render() {
     return (
+
       <Container fluid>
        <Row>
         <Col size="md-12">
@@ -42,6 +43,11 @@ class User extends Component {
          </Col>
          </Row>
          </Container>
+
+      <div>
+        <h1><center>Welcome to Faces of Berkeley!</center></h1>
+      </div>
+
     )
   };
 }

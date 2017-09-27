@@ -2,3 +2,10 @@
 	background-color: #3b5998;
 }
 
+@media screen and (max-width: 360px) {
+   .jumbotron {
+	   height: 110px;
+	   /*margin: 5px;*/
+
+   }
+}

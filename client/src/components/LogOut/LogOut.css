@@ -1,0 +1,22 @@
+.logOut {
+	font-family: Tahoma;
+	/*font-size: 16px;*/
+	color: #fff;
+	margin-top: 15px;
+	/*float: right;*/
+	padding-left: 100px;
+	cursor: pointer;
+
+}
+
+.logOut:hover {
+	color: #8b9dc3;
+}
+
+/*@media screen and (max-width: 360px) {
+   .logOut {
+	   font-size: 14px;
+	   margin: 5px;
+
+   }
+}*/

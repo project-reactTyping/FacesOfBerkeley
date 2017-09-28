@@ -1,0 +1,16 @@
+.nav {
+	/*float: left;*/
+	background-color: #3B5998;
+	/*font-family: Roboto;*/
+	/*color: #fff;*/
+	padding: 20px;
+	width: 100%;
+}
+body {
+	color: #fff;
+}
+
+
+
+@media screen and (max-width: 360px) {
+  }

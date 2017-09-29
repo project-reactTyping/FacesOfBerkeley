@@ -1,0 +1,14 @@
+#comment {
+	width: 70%;
+	font-family: Roboto;
+	font-size: 14px;
+}
+
+#addComment {
+	font-size: 14px;
+
+}
+
+#addComment:hover {
+	background-color: #dfe3ee;
+}

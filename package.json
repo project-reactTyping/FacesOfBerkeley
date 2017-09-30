@@ -23,11 +23,12 @@
     "webpack": "^3.6.0"
   },
   "dependencies": {
-    "auth0-lock": "^10.21.1",
     "axios": "^0.16.2",
+    "bcrypt-nodejs": "0.0.3",
     "body-parser": "^1.18.2",
     "connect-ensure-login": "^0.1.1",
     "express": "^4.15.5",
+    "express-session": "^1.15.6",
     "material-ui": "^0.19.2",
     "mongoose": "^4.11.12",
     "passport": "^0.4.0",

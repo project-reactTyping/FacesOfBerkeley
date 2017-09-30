@@ -1,19 +1,52 @@
 const mongoose = require("mongoose");
+var bcrypt   = require('bcrypt-nodejs');
 const Schema = mongoose.Schema;
 
-const userSchema = new Schema({
-  first_name: { type: String, required: true },
-  last_name: { type: String, required: true },
-  email: { type: String, required: true },
-  picture: { type: String, required: false },
-  friends: { type: String, required: false },
-  followers: { type: String, required: false },
-  calendar: { type: String, required: false },
-  todo: { type: String, required: false },
-  date: { type: Date, default: Date.now }
+var userSchema = new Schema({
+
+    local            : {
+        email        : String,
+        first_name   : String,
+        last_name    : String,
+        password     : String,
+        email        : String,
+        picture      : String,
+        friends      : [],
+        followers    : [],
+        todo         : String
+    },
+    facebook         : {
+        id           : String,
+        token        : String,
+        email        : String,
+        name         : String
+    },
+    twitter          : {
+        id           : String,
+        token        : String,
+        displayName  : String,
+        username     : String
+    },
+    google           : {
+        id           : String,
+        token        : String,
+        email        : String,
+        name         : String
+    }
+
 });
 
-const User = mongoose.model("User", userSchema);
+// generating a hash
+userSchema.methods.generateHash = function(password) {
+    return bcrypt.hashSync(password, bcrypt.genSaltSync(8), null);
+};
 
-module.exports = User;
+// checking if password is valid
+userSchema.methods.validPassword = function(password) {
+    return bcrypt.compareSync(password, this.local.password);
+};
 
+// create the model for users and expose it to our app
+var newUser = mongoose.model('newUser', userSchema);
+
+module.exports = newUser;

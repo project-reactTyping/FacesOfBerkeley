@@ -1,28 +1,34 @@
 import React from "react";
 import "./Signin.css";
-import SignUpform from '../SignUpForm';
+import axios from 'axios';
 
 class Signin extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      error: ''
+      error: '',
+      email: '',
+      password: ''
     };
   }
 
-  onSubmit(e) {
+  handleSubmit = (e) => {
     e.preventDefault();
+    var email = this.state.email.trim();
+    var password = this.state.password.trim();
 
-    let email = this.refs.email.value.trim();
-    let password = this.refs.password.value.trim();
+    axios.post('/login' , { email, password })
+      .then((results) => {
+        console.log(results);
+      });
+  }
 
-    this.props.loginWithPassword( {email}, password, (err) => {
-      if (err) {
-        this.setState({error: 'Unable to signin. Check email and or password.'});
-      } else {
-        this.setState({error: ''});
-      }
-    });
+  handlePasswordChange = (event) => {
+    this.setState({password: event.target.value});
+  }
+
+  handleEmailChange = (event) => {
+    this.setState({email: event.target.value})
   }
 
   render() {
@@ -31,14 +37,14 @@ class Signin extends React.Component {
         <div className="boxed-view__box">
           <h2>Login</h2>
 
-          {this.state.error ? <p>{this.state.error}</p> : undefined}
+          {this.state.error && <p>{this.state.error}</p>}
 
-          <form onSubmit={this.onSubmit.bind(this)} className="boxed-view__form" action="/login" method="post">
+          <form onSubmit={this.handleSubmit} className="boxed-view__form" action="/login" method="post">
             <div>
-              <input type="email" ref="email" name="email" placeholder="Email"/>
+              <input type="email" name="email" placeholder="Email" autoComplete="off" onChange={this.handleEmailChange}/>
             </div>
             <div>
-              <input type="password" ref="password" name="password" placeholder="Password"/>
+              <input type="password" name="password" placeholder="Password" autoComplete="off" onChange={this.handlePasswordChange}/>
             </div>
             <br />
             <div>

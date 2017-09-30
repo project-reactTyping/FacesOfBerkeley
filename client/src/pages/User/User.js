@@ -4,10 +4,14 @@ import SearchBar from "../../components/SearchBar";
 // import Container from "../components/Grid/Container";
 // import UserBar from "../components/Nav/NavComponents/UserBar";
 import Col from "../../components/Grid/Col";
-// import Row from "../components/Grid/Row";
+import Row from "../../components/Grid/Row";
 // import Jumbotron from "../components/Jumbotron";
 import NavLinks from '../../components/NavLinks';
 import Post from '../../components/Post';
+import ListOfPosts from '../../components/ListOfPosts';
+import Weather from '../../components/Weather';
+import Calendar from '../../components/Calendar';
+import ToDo from '../../components/ToDo';
 import "./User.css";
 
 
@@ -33,13 +37,22 @@ class User extends Component {
           <NavLinks text="Profile" />
           <LogOut />
         </div>
-        <Col size="md-4">
-
+        <div>
+        <Row>
+        <Col xs={6} size='md-4' md={4}>
+         <Weather />
+         <Calendar />
+         <ToDo />
         </Col>
-        <Col size="md-8">
+        <Col xs={12} size="md-8" md={8}>
+
           <Post />
 
+          <ListOfPosts />
+
         </Col>
+        </Row>
+        </div>
 
     </div>
 

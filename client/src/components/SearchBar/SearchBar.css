@@ -1,0 +1,14 @@
+#search {
+	border-radius: 25px;
+	font-family: Tahoma;
+	margin-top: 10px;
+	border-color: #fff;
+}
+
+@media screen and (max-width: 360px) {
+   #search {
+	   font-size: 14px;
+	   /*margin: 5px;*/
+
+   }
+}

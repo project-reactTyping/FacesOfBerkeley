@@ -23,11 +23,11 @@ module.exports = (app) => {
       successFlash: 'Welcome!',
       failureRedirect: '/login' }));
 
-  router.post('/signup', passport.
-    authenticate('local', { successRedirect: '/user',
-      failureFlash: 'invalid inputs',
-      successFlash: 'welcome',
-      failureRedirect: '/'}));
+  // router.post('/signup', passport.
+  //   authenticate('local', { successRedirect: '/user',
+  //     failureFlash: 'invalid inputs',
+  //     successFlash: 'welcome',
+  //     failureRedirect: '/'}));
 
   router.get('/logout', function(req, res) {
     req.logout();

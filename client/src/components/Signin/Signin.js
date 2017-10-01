@@ -18,7 +18,8 @@ class Signin extends React.Component {
 
     axios.get('/user', {
       params: {
-        email: email
+        email: email,
+        password: password
       }
     })
     .then(function (response) {

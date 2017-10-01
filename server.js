@@ -1,6 +1,7 @@
 const express = require("express");
 const bodyParser = require("body-parser");
 const mongoose = require("mongoose");
+var User = require('./models/user.js');
 const routes = require("./routes");
 const passport = require('passport')
 const FacebookStrategy = require('passport-facebook').Strategy;
@@ -8,7 +9,19 @@ const GoogleStrategy = require('passport-google-oauth20').Strategy;
 const keys = require('./config/keys')
 const app = express();
 
-
+app.post('/signup', (req, res) => {
+  var newUser = new User(req.body);
+  newUser.save((err, doc) => {
+    if (err) {
+      res.send(err);
+      console.log('user did not save');
+    } else {
+      res.send(doc);
+      console.log('user has been saved');
+      res.redirect('/user');
+    }
+  });
+});
 
 passport.use(
   new GoogleStrategy(

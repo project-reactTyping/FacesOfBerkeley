@@ -3,12 +3,7 @@ var bcrypt   = require('bcrypt-nodejs');
 const Schema = mongoose.Schema;
 
 var userSchema = new Schema({
-
-        email        : {
-            type: String,
-            unique: true,
-            match: [/.+\@.+\..+/, "Please enter a valid e-mail address"]
-        },
+    Profile      : {
         first_name   : {
             type: String,
             trim: true,
@@ -19,17 +14,22 @@ var userSchema = new Schema({
             trim: true,
             required: "Last Name is Required"
         },
+        email        : {
+            type: String,
+            unique: true,
+            match: [/.+\@.+\..+/, "Please enter a valid e-mail address"]
+        },
         password     : {
             type: String,
             trim: true,
             required: "Password is Required",
             validate: [
               function(input) {
-                return input.length >= 6;
+                return input.length >= 5;
               },
-              "Password should be at least 6 characters."
+              "Password should be at least 5 characters."
             ]
-        },
+    },
         picture      : String,
         friends      : [],
         followers    : [],
@@ -37,7 +37,8 @@ var userSchema = new Schema({
         userCreated: {
             type: Date,
             default: Date.now
-          },
+          }
+        },
     facebook         : {
         id           : String,
         token        : String,
@@ -70,6 +71,6 @@ userSchema.methods.validPassword = function(password) {
 };
 
 // create the model for users and expose it to our app
-var newUser = mongoose.model('Profile', userSchema);
+var User = mongoose.model('Profile', userSchema);
 
-module.exports = newUser;
+module.exports = User;

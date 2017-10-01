@@ -1,6 +1,6 @@
 import React from 'react';
 import './SignUpForm.css';
-import axios from 'axios';
+let db = process.env.MONGODB_URI || 'mongodb://localhost/FacesOfBerkeley';
 
 class SignUpForm extends React.Component {
   constructor(props) {
@@ -16,16 +16,19 @@ class SignUpForm extends React.Component {
 
   handleSubmit = (e) => {
     e.preventDefault();
-    var first_name = this.state.first_name.trim();
-    var last_name = this.state.last_name.trim();
-    var email = this.state.email.trim();
-    var password = this.state.password.trim();
+    let first_name = this.state.first_name.trim();
+    let last_name = this.state.last_name.trim();
+    let email = this.state.email.trim();
+    let password = this.state.password.trim();
 
-
-    axios.post('/signup', { first_name, last_name, email, password })
-      .then((results) => {
-        console.log(results);
-      });
+    db.Profile.insertOne(
+      {
+        first_name: first_name,
+        last_name: last_name,
+        email: email,
+        password: password,
+      }
+    )
   }
 
   handleFirstNameChange = (event) => {

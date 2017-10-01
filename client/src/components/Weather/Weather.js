@@ -7,9 +7,9 @@ import "./Weather.css";
 
 
 class Weather extends React.Component {
-	constructor() {
-		super();
-	}
+	// constructor() {
+	// 	super();
+	// }
 	get city() {
 		return 'San Francisco';
 	}
@@ -25,7 +25,7 @@ class Weather extends React.Component {
   		<div>
 		  	<p><strong>City: </strong>{this.city}</p>
 		  	<p><strong>Current Temperature: </strong>{this.temp}</p>
-		  	<img src="https://support.apple.com/library/content/dam/edam/applecare/images/en_US/iOS/ios10-weather-app-icon.png" />
+		  	<img src="https://support.apple.com/library/content/dam/edam/applecare/images/en_US/iOS/ios10-weather-app-icon.png" alt="Sorry due to inclement weather, this weather portion is down"/>
  
 	  	</div>
 	  	);

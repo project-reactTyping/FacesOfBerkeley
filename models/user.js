@@ -4,17 +4,40 @@ const Schema = mongoose.Schema;
 
 var userSchema = new Schema({
 
-    local            : {
-        email        : String,
-        first_name   : String,
-        last_name    : String,
-        password     : String,
-        email        : String,
+        email        : {
+            type: String,
+            unique: true,
+            match: [/.+\@.+\..+/, "Please enter a valid e-mail address"]
+        },
+        first_name   : {
+            type: String,
+            trim: true,
+            required: "First Name is Required"
+        },
+        last_name    : {
+            type: String,
+            trim: true,
+            required: "Last Name is Required"
+        },
+        password     : {
+            type: String,
+            trim: true,
+            required: "Password is Required",
+            validate: [
+              function(input) {
+                return input.length >= 6;
+              },
+              "Password should be at least 6 characters."
+            ]
+        },
         picture      : String,
         friends      : [],
         followers    : [],
-        todo         : String
-    },
+        todo         : [],
+        userCreated: {
+            type: Date,
+            default: Date.now
+          },
     facebook         : {
         id           : String,
         token        : String,
@@ -47,6 +70,6 @@ userSchema.methods.validPassword = function(password) {
 };
 
 // create the model for users and expose it to our app
-var newUser = mongoose.model('newUser', userSchema);
+var newUser = mongoose.model('Profile', userSchema);
 
 module.exports = newUser;

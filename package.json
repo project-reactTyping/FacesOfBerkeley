@@ -23,16 +23,22 @@
     "webpack": "^3.6.0"
   },
   "dependencies": {
-    "auth0-lock": "^10.21.1",
+    "auth0-js": "^8.10.1",
+    "auth0-lock": "^10.22.0",
     "axios": "^0.16.2",
+    "bcrypt-nodejs": "0.0.3",
     "body-parser": "^1.18.2",
     "connect-ensure-login": "^0.1.1",
+    "cookie-parser": "^1.4.3",
     "express": "^4.15.5",
     "material-ui": "^0.19.2",
+    "method-override": "^2.3.10",
     "mongoose": "^4.11.12",
+    "morgan": "^1.9.0",
     "passport": "^0.4.0",
     "passport-auth0": "^0.6.0",
     "passport-facebook": "^2.1.1",
+    "passport-google-oauth20": "^1.0.0",
     "passport-local": "^1.0.0",
     "react": "^15.6.2",
     "react-addons-css-transition-group": "^15.6.2",
@@ -40,7 +46,6 @@
     "react-infinite-calendar": "^2.3.1",
     "react-router": "^4.2.0",
     "react-router-dom": "^4.2.2",
-    "react-tap-event-plugin": "^2.0.1",
-    "validator": "^8.2.0"
+    "react-tap-event-plugin": "^2.0.1"
   }
 }

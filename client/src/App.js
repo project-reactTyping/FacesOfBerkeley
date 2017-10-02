@@ -7,6 +7,8 @@ import Weather from './components/Weather';
 import Calendar from './components/Calendar';
 import ToDoList from './components/ToDoList';
 import NavLinks from './components/NavLinks';
+import MyFollowers from './pages/Followers';
+import MyProfile from './pages/Profile';
 
 // import Profile from './components/Profile';
 
@@ -26,7 +28,8 @@ const App = () =>
         <Route exact path="/calendar" component={Calendar} />
         <Route exact path='/todolist' component={ToDoList} />
         <Route exact path="/navlinks" component={NavLinks} />
-
+        <Route exact path="/user/followers" component={MyFollowers} />
+        <Route exact path="/user/profile" component={MyProfile} />
 
 
       </Switch>

@@ -30,8 +30,17 @@ class Friends extends Component {
           <NavLinks text="Profile" />
           <LogOut />
         </div>
+        <Col xs={6} size='md-4' md={4}>
+        <SideBar />
+        </Col>
+        <Col xs={12} size='md-8' md={8}>
           <MyFriends />
-      </div>
+        </Col>
+
+    </div>
+
+
+
     );
   }
 }

@@ -26,8 +26,8 @@ const App = () =>
         <Route exact path="/calendar" component={Calendar} />
         <Route exact path='/todolist' component={ToDoList} />
         <Route exact path="/navlinks" component={NavLinks} />
-        <Route exact path='/profile' component={Profile} />
-        <Route exact path='friends' component={Friends} />
+        <Route exact path='/user/profile' component={Profile} />
+        <Route exact path='/user/friends' component={Friends} />
       </Switch>
     </div>
   </Router>;

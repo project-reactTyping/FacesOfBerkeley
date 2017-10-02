@@ -8,7 +8,7 @@ import Weather from './components/Weather';
 import Calendar from './components/Calendar';
 import ToDoList from './components/ToDoList';
 import NavLinks from './components/NavLinks';
-import Profile from './components/Profile';
+// import Profile from './components/Profile';
 import './App.css';
 
 const App = () =>

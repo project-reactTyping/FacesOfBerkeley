@@ -2,14 +2,7 @@
 	width: 70%;
 	font-family: Roboto;
 	font-size: 16px;
-	margin-top: 100px;
-}
-
-#postBtn {
-	/*margin-left: 383px;*/
+	margin-top: 85px;
 }
 
 
-#postBtn:hover {
-   background-color: #dfe3ee;
-}

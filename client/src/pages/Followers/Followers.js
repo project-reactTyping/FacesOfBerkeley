@@ -4,11 +4,13 @@ import SearchBar from "../../components/SearchBar";
 import Col from "../../components/Grid/Col";
 import NavLinks from '../../components/NavLinks';
 import SideBar from '../../components/SideBar';
+
+import MyFollowers from '../../components/MyFollowers';
 import "./Followers.css";
 
 
 
-class Followers extends Component {
+class Followers extends React.Component {
 
   componentDidMount() {
     this.loadUsers();
@@ -21,7 +23,6 @@ class Followers extends Component {
   render() {
     return (
       <div>
-
         <div className="nav">
           <SearchBar />
           <NavLinks className="friends" text="Friends" />
@@ -29,12 +30,14 @@ class Followers extends Component {
           <NavLinks text="Profile" />
           <LogOut />
         </div>
+
         <Col xs={6} size='md-4' md={4}>
           <SideBar />
         </Col>
-        <Col xs={12} size='md-8' md={8}>
-        </Col>
 
+        <Col xs={12} size='md-8' md={8}>
+          <MyFollowers />
+        </Col>
     </div>
 
 

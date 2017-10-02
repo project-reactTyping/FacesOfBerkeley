@@ -2,8 +2,6 @@ import React from 'react';
 import './SignUpForm.css';
 import axios from 'axios';
 
-var db = process.env.MONGODB_URI || 'mongodb://localhost/FacesOfBerkeley/Profile';
-
 class SignUpForm extends React.Component {
   constructor(props) {
     super(props);

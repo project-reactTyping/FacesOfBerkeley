@@ -5,6 +5,7 @@ import Col from "../../components/Grid/Col";
 import NavLinks from '../../components/NavLinks';
 import Post from '../../components/Post';
 import SideBar from '../../components/SideBar';
+import MyProfile from '../../components/MyProfile';
 import "./Profile.css";
 
 class Profile extends Component {
@@ -28,11 +29,13 @@ class Profile extends Component {
           <NavLinks text="Profile" />
           <LogOut />
         </div>
+
         <Col xs={6} size='md-4' md={4}>
           <SideBar />
         </Col>
+
         <Col xs={12} size="md-8" md={8}>
-        <Post />
+          <MyProfile />
         </Col>
 
     </div>

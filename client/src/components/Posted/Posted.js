@@ -1,16 +1,30 @@
 import React from "react";
 import "./Posted.css";
 import UserPosts from "../../components/UserPosts";
-import PostBtn from "../../components/PostBtn";
 import UserComments from "../../components/UserComments";
+import axios from 'axios';
+
+class Posted extends React.Component {
+	constructor(props) {
+		super(props);
+		  this.state = {
+		  	error: '',
+		  	post: '',
+		  	comments: ''
+		  };
+	}
 
 
-const Posted = props => (
-	<div className="posted">
-	  <UserPosts />
-	  <PostBtn />
-	  <UserComments />
-	</div>
-	);
+
+	render() {
+	   return (
+		<div className="posted">
+		  <UserPosts />
+		  <UserComments />
+		</div>
+		);
+	}
+
+}
 
 export default Posted;

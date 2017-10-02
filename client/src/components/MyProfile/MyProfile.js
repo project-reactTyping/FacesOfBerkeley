@@ -1,13 +1,13 @@
 import React from "react";
-import "./MyFollowers.css";
+import "./MyProfile.css";
 import axios from 'axios';
 
-class MyFollowers extends React.Component {
+class MyProfile extends React.Component {
 	constructor(props) {
 		super(props);
 		   this.state = {
 		   	   error: '',
-		   	   followers: ''
+		   	   profile: ''
 		   };
 	}
 
@@ -16,10 +16,10 @@ class MyFollowers extends React.Component {
 	render () {
 		return (
 		   <div>
-		   <p>You are being followed</p>
+		   <p>This is your Profile</p>
 		   </div>
 		);
 	}
 }
 
-export default MyFollowers;
+export default MyProfile;

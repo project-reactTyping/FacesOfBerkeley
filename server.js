@@ -96,6 +96,7 @@ app.get(mongoose, (req, res) => {
     }
     else {
       res.send(user);
+      res.redirect('/user');
     }
   })
 });

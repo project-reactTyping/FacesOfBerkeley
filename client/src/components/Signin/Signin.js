@@ -41,7 +41,8 @@ class Signin extends React.Component {
 
           {this.state.error ? <p>{this.state.error}</p> : undefined}
 
-          <form className="boxed-view__form" action="db" method="post">
+
+          <form className="boxed-view__form" action="/login" method="post">
             <div>
               <input type="email" ref="email" name="email" placeholder="Email"/>
             </div>

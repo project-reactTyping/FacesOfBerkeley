@@ -21,10 +21,11 @@ class SignUpForm extends React.Component {
     let email = this.state.email.trim();
     let password = this.state.password.trim();
 
-    axios.post('/signup', { first_name: first_name, last_name: last_name, email: email, password: password })
+    axios.post('/signup', { first_name, last_name, email, password })
           .then((result) => {
             console.log(result.data);
           });
+    first_name = first_name.val('');
 
   }
 
@@ -51,8 +52,10 @@ class SignUpForm extends React.Component {
         <div className="container-view">
           <h2>Sign Up</h2>
           <br />
+
           {this.state.error && <p>{this.state.error}</p>}
-          <form onSubmit={this.handleSubmit} className="container-view-form" action="/login" method="post">
+
+          <form className="container-view-form" action="/signup" method="post">
             <div className="field-line-first">
               <input type="first_name" name="first_name" onChange={this.handleFirstNameChange} placeholder="first name" />
             </div>
@@ -67,7 +70,7 @@ class SignUpForm extends React.Component {
             </div>
             <br />
             <div>
-              <input type="submit" value="Sign Up"/>
+              <input onSubmit={this.handleSubmit} type="submit" value="Sign Up"/>
             </div>
           </form>
         </div>

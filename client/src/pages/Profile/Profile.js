@@ -8,8 +8,6 @@ import SideBar from '../../components/SideBar';
 import MyProfile from '../../components/MyProfile';
 import "./Profile.css";
 
-
-
 class Profile extends Component {
 
   componentDidMount() {
@@ -26,16 +24,19 @@ class Profile extends Component {
 
         <div className="nav">
           <SearchBar />
+          <NavLinks text="Home" />
           <NavLinks className="friends" text="Friends" />
           <NavLinks text="Followers" />
           <NavLinks text="Profile" />
           <LogOut />
         </div>
-        <Col size="md-4">
-        <SideBar />
+
+        <Col xs={6} size='md-4' md={4}>
+          <SideBar />
         </Col>
-        <Col size="md-8">
-         <MyProfile />
+
+        <Col xs={12} size="md-8" md={8}>
+          <MyProfile />
         </Col>
 
     </div>

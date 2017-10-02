@@ -7,13 +7,10 @@ import Weather from './components/Weather';
 import Calendar from './components/Calendar';
 import ToDoList from './components/ToDoList';
 import NavLinks from './components/NavLinks';
+import Friends from './pages/Friends';
 import MyFollowers from './pages/Followers';
-import MyProfile from './pages/Profile';
-
-// import Profile from './components/Profile';
-
 import OAuth from './pages/OAuth';
-
+import Profile from './pages/Profile';
 import './App.css';
 
 const App = () =>
@@ -28,10 +25,10 @@ const App = () =>
         <Route exact path="/calendar" component={Calendar} />
         <Route exact path='/todolist' component={ToDoList} />
         <Route exact path="/navlinks" component={NavLinks} />
+        <Route exact path='/user/friends' component={Friends} />
         <Route exact path="/user/followers" component={MyFollowers} />
-        <Route exact path="/user/profile" component={MyProfile} />
-
-
+        <Route exact path="/user/profile" component={Profile} />
+        <Route exact path="/user/home" component={User} />
       </Switch>
     </div>
   </Router>;

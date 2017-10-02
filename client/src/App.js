@@ -7,7 +7,11 @@ import Weather from './components/Weather';
 import Calendar from './components/Calendar';
 import ToDoList from './components/ToDoList';
 import NavLinks from './components/NavLinks';
+
+// import Profile from './components/Profile';
+
 import OAuth from './pages/OAuth';
+
 import './App.css';
 
 const App = () =>
@@ -22,6 +26,9 @@ const App = () =>
         <Route exact path="/calendar" component={Calendar} />
         <Route exact path='/todolist' component={ToDoList} />
         <Route exact path="/navlinks" component={NavLinks} />
+
+
+
       </Switch>
     </div>
   </Router>;

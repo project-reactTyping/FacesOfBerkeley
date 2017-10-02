@@ -11,8 +11,8 @@ class Calendar extends React.Component {
 	render() {
 		return (
 		  <InfiniteCalendar
-		    width={275}
-		    height={350}
+		    width={250}
+		    height={400}
 		    selected={today}
 		    minDate={lastWeek} />
 		);

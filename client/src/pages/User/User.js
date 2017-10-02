@@ -4,11 +4,14 @@ import SearchBar from "../../components/SearchBar";
 import Col from "../../components/Grid/Col";
 import Row from "../../components/Grid/Row";
 import NavLinks from '../../components/NavLinks';
-import Post from '../../components/Post';
-import ListOfPosts from '../../components/ListOfPosts';
-import Weather from '../../components/Weather';
-import Calendar from '../../components/Calendar';
-import ToDo from '../../components/ToDo';
+// import Post from '../../components/Post';
+// import ListOfPosts from '../../components/ListOfPosts';
+// import Weather from '../../components/Weather';
+// import Calendar from '../../components/Calendar';
+// import ToDo from '../../components/ToDo';
+// import PostBtn from '../../components/PostBtn';
+import SideBar from '../../components/SideBar';
+import PostContainer from '../../components/PostContainer';
 import "./User.css";
 
 
@@ -37,15 +40,10 @@ class User extends Component {
         <div>
         <Row>
         <Col xs={6} size='md-4' md={4}>
-         <Weather />
-         <Calendar />
-         <ToDo />
+        <SideBar />
         </Col>
         <Col xs={12} size="md-8" md={8}>
-
-          <Post />
-
-          <ListOfPosts />
+        <PostContainer />
 
         </Col>
         </Row>

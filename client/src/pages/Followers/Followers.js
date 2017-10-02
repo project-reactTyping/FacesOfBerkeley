@@ -7,7 +7,8 @@ import Col from "../../components/Grid/Col";
 // import Row from "../components/Grid/Row";
 // import Jumbotron from "../components/Jumbotron";
 import NavLinks from '../../components/NavLinks';
-import Post from '../../components/Post';
+import SideBar from '../../components/SideBar';
+// import Post from '../../components/Post';
 import "./Followers.css";
 
 
@@ -34,7 +35,7 @@ class Followers extends Component {
           <LogOut />
         </div>
         <Col size="md-4">
-
+        <SideBar />
         </Col>
         <Col size="md-8">
 

@@ -22,7 +22,6 @@ const App = () =>
         <Route exact path="/calendar" component={Calendar} />
         <Route exact path='/todolist' component={ToDoList} />
         <Route exact path="/navlinks" component={NavLinks} />
-        <Route exact path="/profile" component={Profile} />
 
       </Switch>
     </div>

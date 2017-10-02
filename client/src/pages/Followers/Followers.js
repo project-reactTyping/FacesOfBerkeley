@@ -1,19 +1,15 @@
 import React, { Component } from "react";
 import LogOut from "../../components/LogOut";
 import SearchBar from "../../components/SearchBar";
-// import Container from "../components/Grid/Container";
-// import UserBar from "../components/Nav/NavComponents/UserBar";
 import Col from "../../components/Grid/Col";
-// import Row from "../components/Grid/Row";
-// import Jumbotron from "../components/Jumbotron";
 import NavLinks from '../../components/NavLinks';
 import SideBar from '../../components/SideBar';
-// import Post from '../../components/Post';
+import MyFollowers from '../../components/MyFollowers';
 import "./Followers.css";
 
 
 
-class Followers extends Component {
+class Followers extends React.Component {
 
   componentDidMount() {
     this.loadUsers();
@@ -38,6 +34,7 @@ class Followers extends Component {
         <SideBar />
         </Col>
         <Col size="md-8">
+        <MyFollowers />
 
         </Col>
 

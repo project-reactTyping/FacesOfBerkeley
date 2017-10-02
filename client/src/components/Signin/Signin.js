@@ -1,6 +1,7 @@
 import React from "react";
 import "./Signin.css";
 import axios from 'axios';
+var db = process.env.MONGODB_URI || 'mongodb://localhost/FacesOfBerkeley/Profile';
 
 class Signin extends React.Component {
   constructor(props) {
@@ -16,7 +17,7 @@ class Signin extends React.Component {
     let email = this.refs.email.value.trim();
     let password = this.refs.password.value.trim();
 
-    axios.get('/login', {
+    axios.get(db, {
       params: {
         email: email,
         password: password
@@ -40,7 +41,7 @@ class Signin extends React.Component {
 
           {this.state.error ? <p>{this.state.error}</p> : undefined}
 
-          <form className="boxed-view__form" action="/login" method="post">
+          <form className="boxed-view__form" action="db" method="post">
             <div>
               <input type="email" ref="email" name="email" placeholder="Email"/>
             </div>

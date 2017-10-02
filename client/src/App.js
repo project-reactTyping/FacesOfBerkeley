@@ -7,6 +7,9 @@ import Weather from './components/Weather';
 import Calendar from './components/Calendar';
 import ToDoList from './components/ToDoList';
 import NavLinks from './components/NavLinks';
+import Friends from './pages/Friends';
+// import Profile from './components/Profile';
+
 import OAuth from './pages/OAuth';
 import Profile from './pages/Profile';
 import './App.css';
@@ -24,6 +27,7 @@ const App = () =>
         <Route exact path='/todolist' component={ToDoList} />
         <Route exact path="/navlinks" component={NavLinks} />
         <Route exact path='/profile' component={Profile} />
+        <Route exact path='friends' component={Friends} />
       </Switch>
     </div>
   </Router>;

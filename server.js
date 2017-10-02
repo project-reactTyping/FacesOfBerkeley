@@ -73,8 +73,7 @@ mongoose.connect(db, function(error) {
     console.log('mongoose connection is successful');
   }
 });
-
-app.post('/signup', (req, res) => {
+app.post(mongoose, (req, res) => {
   var newUser = new User(req.body);
   newUser.save((err, user) => {
     if (err) {
@@ -88,7 +87,7 @@ app.post('/signup', (req, res) => {
   });
 });
 
-app.get('/login', (req, res) => {
+app.get(mongoose, (req, res) => {
   console.log(req.body);
   newUser.find({})
   .exec(function(err, user) {
@@ -102,9 +101,9 @@ app.get('/login', (req, res) => {
 });
 // Send every request to the React app
 // Define any API routes before this runs
-app.get("*", function(req, res) {
-  res.sendFile(path.join(__dirname, "./client/build/index.html"));
-});
+// app.get("*", function(req, res) {
+//   res.sendFile(path.join(__dirname, "./client/build/index.html"));
+// });
 
 // Start the API server
 app.listen(PORT, function() {

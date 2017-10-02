@@ -1,14 +1,8 @@
 #post {
-	width: 200%;
+	width: 70%;
 	font-family: Roboto;
 	font-size: 16px;
-}
-
-#postBtn {
-	/*margin-left: 383px;*/
+	margin-top: 85px;
 }
 
 
-#postBtn:hover {
-   background-color: #dfe3ee;
-}

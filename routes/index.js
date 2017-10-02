@@ -14,12 +14,37 @@ module.exports = (app) => {
   });
 
 
+// router.post('/signup', (req, res) => {
+//   var newUser = new User(req.body);
+//   newUser.save((err, user) => {
+//     if (err) {
+//       res.send(err);
+//       console.log('user did not save');
+//     } else {
+//       res.send(user);
+//       console.log('user has been saved');
+//       res.redirect('/user');
+//     }
+//   });
+// });
 
-  router.post('/login', passport.
-    authenticate('local', { successRedirect: '/user',
-      failureFlash: 'Invalid username or password.',
-      successFlash: 'Welcome!',
-      failureRedirect: '/login' }));
+// router.get('/signin', (req, res) => {
+//   console.log(req.body);
+//   newUser.find({})
+//   .exec(function(err, user) {
+//     if (err) {
+//       console.log(err);
+//     }
+//     else {
+//       res.send(user);
+//     }
+//   })
+// });
+  // router.post('/login', passport.
+  //   authenticate('local', { successRedirect: '/user',
+  //     failureFlash: 'Invalid username or password.',
+  //     successFlash: 'Welcome!',
+  //     failureRedirect: '/login' }));
 
   // router.post('/signup', passport.
   //   authenticate('local', { successRedirect: '/user',
@@ -27,19 +52,19 @@ module.exports = (app) => {
   //     successFlash: 'welcome',
   //     failureRedirect: '/'}));
 
-  router.get('/logout', function(req, res) {
-    req.logout();
-    res.redirect('/login');
-  });
+  // router.get('/logout', function(req, res) {
+  //   req.logout();
+  //   res.redirect('/login');
+  // });
 
-  router.get('/callback',
-    passport.authenticate('auth0', {
-      failureRedirect: '/failure'
-    }),
-    function(req, res) {
-      res.redirect(req.session.returnTo || '/user');
-    }
-  );
+  // router.get('/callback',
+  //   passport.authenticate('auth0', {
+  //     failureRedirect: '/failure'
+  //   }),
+  //   function(req, res) {
+  //     res.redirect(req.session.returnTo || '/user');
+  //   }
+  // );
 
   // router.get('/failure', function(req, res) {
   //   var error = req.flash("error");

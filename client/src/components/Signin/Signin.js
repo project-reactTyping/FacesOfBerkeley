@@ -1,6 +1,6 @@
 import React from "react";
 import "./Signin.css";
-import SignUpform from '../SignUpForm';
+import axios from 'axios';
 
 class Signin extends React.Component {
   constructor(props) {
@@ -16,12 +16,17 @@ class Signin extends React.Component {
     let email = this.refs.email.value.trim();
     let password = this.refs.password.value.trim();
 
-    this.props.loginWithPassword( {email}, password, (err) => {
-      if (err) {
-        this.setState({error: 'Unable to signin. Check email and or password.'});
-      } else {
-        this.setState({error: ''});
+    axios.get('/login', {
+      params: {
+        email: email,
+        password: password
       }
+    })
+    .then(function (response) {
+      console.log(response);
+    })
+    .catch(function (error) {
+      console.log(error);
     });
   }
 

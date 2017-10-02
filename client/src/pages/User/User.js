@@ -1,11 +1,8 @@
 import React, { Component } from "react";
 import LogOut from "../../components/LogOut";
 import SearchBar from "../../components/SearchBar";
-// import Container from "../components/Grid/Container";
-// import UserBar from "../components/Nav/NavComponents/UserBar";
 import Col from "../../components/Grid/Col";
 import Row from "../../components/Grid/Row";
-// import Jumbotron from "../components/Jumbotron";
 import NavLinks from '../../components/NavLinks';
 // import Post from '../../components/Post';
 // import ListOfPosts from '../../components/ListOfPosts';

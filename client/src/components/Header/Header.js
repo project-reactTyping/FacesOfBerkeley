@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import {Navbar, Nav, NavItem} from 'react-bootstrap';
 
 class Header extends Component {
   onLoginClick(){
@@ -13,21 +12,14 @@ class Header extends Component {
   render() {
     let navItems;
     if(this.props.idToken){
-      navItems = <NavItem onClick={this.onLogoutClick.bind(this)} href="#">Logout</NavItem>
+      navItems = <div onClick={this.onLogoutClick.bind(this)} href="#">Logout</div>
     } else {
-      navItems = <NavItem onClick={this.onLoginClick.bind(this)} href="#">Login</NavItem>
+      navItems = <div onClick={this.onLoginClick.bind(this)} href="#">Login</div>
     }
     return (
-      <Navbar>
-        <Navbar.Header>
-          <Navbar.Brand>
-            ReactAuth Header
-          </Navbar.Brand>
-        </Navbar.Header>
-        <Nav>
-          {navItems}
-        </Nav>
-      </Navbar>
+      <div>
+      {navItems}
+      </div>
     );
   }
 }

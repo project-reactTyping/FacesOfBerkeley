@@ -1,6 +1,7 @@
 const express = require("express");
 const bodyParser = require("body-parser");
 const mongoose = require("mongoose");
+const morgan = require('morgan');
 var User = require('./models/user.js');
 const routes = require("./routes");
 const passport = require('passport')
@@ -8,20 +9,6 @@ const FacebookStrategy = require('passport-facebook').Strategy;
 const GoogleStrategy = require('passport-google-oauth20').Strategy;
 const keys = require('./config/keys')
 const app = express();
-
-app.post('/signup', (req, res) => {
-  var newUser = new User(req.body);
-  newUser.save((err, doc) => {
-    if (err) {
-      res.send(err);
-      console.log('user did not save');
-    } else {
-      res.send(doc);
-      console.log('user has been saved');
-      res.redirect('/user');
-    }
-  });
-});
 
 passport.use(
   new GoogleStrategy(
@@ -54,6 +41,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 // Serve up static assets
 app.use(express.static("client/build"));
+app.use(morgan('combined'));
 // Add routes, both API and view
 app.use(routes);
 app.use(passport.initialize());
@@ -75,7 +63,7 @@ passport.use(new FacebookStrategy({
 ));
 
 // Connect to the Mongo DB
-var db = process.env.MONGODB_URI || 'mongodb://localhost/FacesOfBerkeley';
+var db = process.env.MONGODB_URI || 'mongodb://localhost/FacesOfBerkeley/Profile';
 
 mongoose.connect(db, function(error) {
   if (error) {
@@ -86,6 +74,32 @@ mongoose.connect(db, function(error) {
   }
 });
 
+app.post('/signup', (req, res) => {
+  var newUser = new User(req.body);
+  newUser.save((err, user) => {
+    if (err) {
+      res.send(err);
+      console.log('user did not save');
+    } else {
+      res.send(user);
+      console.log('user has been saved');
+      res.redirect('/user');
+    }
+  });
+});
+
+app.get('/login', (req, res) => {
+  console.log(req.body);
+  newUser.find({})
+  .exec(function(err, user) {
+    if (err) {
+      console.log(err);
+    }
+    else {
+      res.send(user);
+    }
+  })
+});
 // Send every request to the React app
 // Define any API routes before this runs
 app.get("*", function(req, res) {

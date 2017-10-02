@@ -13,9 +13,7 @@ module.exports = (app) => {
     res.render('index');
   });
 
-  // router.get('/login', function(req, res) {
-  //   res.render('index')
-  // });
+
 
   router.post('/login', passport.
     authenticate('local', { successRedirect: '/user',

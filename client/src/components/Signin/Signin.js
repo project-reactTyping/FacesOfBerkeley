@@ -16,7 +16,7 @@ class Signin extends React.Component {
     let email = this.refs.email.value.trim();
     let password = this.refs.password.value.trim();
 
-    axios.get('/user', {
+    axios.get('/login', {
       params: {
         email: email,
         password: password

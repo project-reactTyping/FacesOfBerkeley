@@ -34,6 +34,7 @@ var userSchema = new Schema({
         friends      : [],
         followers    : [],
         todo         : [],
+        post         : [],
         userCreated: {
             type: Date,
             default: Date.now

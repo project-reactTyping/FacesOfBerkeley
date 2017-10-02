@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import Auth0Lock from 'auth0-lock';
-import {Grid, Row, Col} from 'react-bootstrap';
 import Header from '../../components/Header';
 import Home from '../../components/Home';
 import Dashboard from '../../components/Dashboard';
@@ -93,13 +92,9 @@ class OAuth extends Component {
           onLogoutClick={this.logout.bind(this)}
           onLoginClick={this.showLock.bind(this)}
         />
-        <Grid>
-          <Row>
-            <Col xs={12} md={12}>
+          <div>
               {page}
-            </Col>
-          </Row>
-        </Grid>
+          </div>
       </div>
     );
   }

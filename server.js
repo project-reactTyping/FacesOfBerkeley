@@ -4,10 +4,10 @@ const mongoose = require("mongoose");
 const morgan = require('morgan');
 var User = require('./models/user.js');
 const routes = require("./routes");
-const passport = require('passport')
+const passport = require('passport');
 const FacebookStrategy = require('passport-facebook').Strategy;
 const GoogleStrategy = require('passport-google-oauth20').Strategy;
-const keys = require('./config/keys')
+const keys = require('./config/keys');
 const app = express();
 
 passport.use(

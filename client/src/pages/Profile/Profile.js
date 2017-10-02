@@ -9,7 +9,7 @@ import Col from "../../components/Grid/Col";
 import NavLinks from '../../components/NavLinks';
 import Post from '../../components/Post';
 import "./Profile.css";
-
+import Weather from '../../components/Weather';
 
 
 class Profile extends Component {
@@ -34,10 +34,10 @@ class Profile extends Component {
           <LogOut />
         </div>
         <Col size="md-4">
-
+          <Weather />
         </Col>
         <Col size="md-8">
-
+          <Weather />
         </Col>
 
     </div>

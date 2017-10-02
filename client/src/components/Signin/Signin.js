@@ -10,7 +10,7 @@ class Signin extends React.Component {
     };
   }
 
-  onSubmit(e) {
+  onSubmit = (e) => {
     e.preventDefault();
 
     let email = this.refs.email.value.trim();
@@ -28,6 +28,8 @@ class Signin extends React.Component {
     .catch(function (error) {
       console.log(error);
     });
+    email = '';
+    password = '';
   }
 
   render() {
@@ -38,7 +40,7 @@ class Signin extends React.Component {
 
           {this.state.error ? <p>{this.state.error}</p> : undefined}
 
-          <form onSubmit={this.onSubmit.bind(this)} className="boxed-view__form" action="/login" method="post">
+          <form className="boxed-view__form" action="/login" method="post">
             <div>
               <input type="email" ref="email" name="email" placeholder="Email"/>
             </div>
@@ -47,7 +49,7 @@ class Signin extends React.Component {
             </div>
             <br />
             <div>
-              <input type="submit" value="Log In"/>
+              <input onSubmit={this.onSubmit} type="submit" value="Log In"/>
             </div>
               <br />
               <a href="/auth/facebook">Login with Facebook</a>

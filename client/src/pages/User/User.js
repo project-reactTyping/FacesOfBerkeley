@@ -26,21 +26,22 @@ class User extends Component {
 
         <div className="nav">
           <SearchBar />
-          <NavLinks className="friends" text="Friends" />
+          <NavLinks text="Home" />
+          <NavLinks text="Friends" />
           <NavLinks text="Followers" />
           <NavLinks text="Profile" />
           <LogOut />
         </div>
         <div>
-        <Row>
-        <Col xs={6} size='md-4' md={4}>
-        <SideBar />
-        </Col>
-        <Col xs={12} size="md-8" md={8}>
-        <PostContainer />
+          <Row>
+          <Col xs={6} size='md-4' md={4}>
+          <SideBar />
+          </Col>
+          <Col xs={12} size="md-8" md={8}>
+          <PostContainer />
 
-        </Col>
-        </Row>
+          </Col>
+          </Row>
         </div>
 
     </div>

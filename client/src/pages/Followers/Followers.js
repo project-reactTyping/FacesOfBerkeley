@@ -25,6 +25,7 @@ class Followers extends React.Component {
       <div>
         <div className="nav">
           <SearchBar />
+          <NavLinks text="Home" />
           <NavLinks className="friends" text="Friends" />
           <NavLinks text="Followers" />
           <NavLinks text="Profile" />

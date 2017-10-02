@@ -1,22 +1,17 @@
 import React from "react";
-const test = <h1>can u see me?</h1>
+import Post from '../../components/Post';
+
 class MyFriends extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      error: ''
+      error: '',
+      message: 'can u see me?'
     };
   }
   render() {
     return (
-      <div className="boxed-view">
-        <div className="boxed-view__box">
-          <h2>CAN u see me now?</h2>
-            {<h2>can u see me here?</h2>}
-            <h2>i am here</h2>
-          {test}
-        </div>
-      </div>
+      <Post />
     );
   }
 }

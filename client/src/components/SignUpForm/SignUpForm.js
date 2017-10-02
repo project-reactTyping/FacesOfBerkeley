@@ -21,7 +21,7 @@ class SignUpForm extends React.Component {
     let email = this.state.email.trim();
     let password = this.state.password.trim();
 
-    axios.post(db, { first_name, last_name, email, password })
+    axios.post('/signup', { first_name, last_name, email, password })
           .then((result) => {
             console.log(result.data);
           });
@@ -55,7 +55,7 @@ class SignUpForm extends React.Component {
 
           {this.state.error && <p>{this.state.error}</p>}
 
-          <form className="container-view-form" action="db" method="post">
+          <form className="container-view-form" action="/signup" method="post">
             <div className="field-line-first">
               <input type="first_name" name="first_name" onChange={this.handleFirstNameChange} placeholder="first name" />
             </div>

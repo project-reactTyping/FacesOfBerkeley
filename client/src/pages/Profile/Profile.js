@@ -24,6 +24,7 @@ class Profile extends Component {
 
         <div className="nav">
           <SearchBar />
+          <NavLinks text="Home" />
           <NavLinks className="friends" text="Friends" />
           <NavLinks text="Followers" />
           <NavLinks text="Profile" />

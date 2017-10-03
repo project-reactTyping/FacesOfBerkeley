@@ -1,5 +1,6 @@
 import React from "react";
 import Post from '../../components/Post';
+import './MyFriends.css';
 
 class MyFriends extends React.Component {
   constructor(props) {
@@ -12,7 +13,9 @@ class MyFriends extends React.Component {
 
   render() {
     return (
+      <div className="friendPost">
       <Post />
+      </div>
     );
   }
 }

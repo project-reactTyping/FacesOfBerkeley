@@ -1,4 +1,5 @@
 import React from 'react';
+import './YTVideoListItem.css';
 
 const YTVideoListItem = ({video, onVideoSelect}) => {
   const imageUrl = video.snippet.thumbnails.default.url;

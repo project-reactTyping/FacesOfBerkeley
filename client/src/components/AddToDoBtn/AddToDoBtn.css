@@ -2,3 +2,7 @@
 	font-size: 14px;
 	font-family: Roboto;
 }
+
+#addToDoBtn:hover {
+	background-color: #8b9dc3;
+}

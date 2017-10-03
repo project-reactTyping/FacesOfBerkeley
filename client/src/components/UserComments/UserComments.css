@@ -1,5 +1,5 @@
 #comment {
-	width: 93.7%;
+	width: 95%;
 	font-family: Roboto;
 	font-size: 14px;
 }
@@ -10,5 +10,5 @@
 }
 
 #addComment:hover {
-	background-color: #dfe3ee;
+	background-color: #8b9dc3;
 }

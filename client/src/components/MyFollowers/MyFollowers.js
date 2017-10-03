@@ -1,5 +1,6 @@
 import React from "react";
 import "./MyFollowers.css";
+import Post from "../../components/Post";
 
 class MyFollowers extends React.Component {
 	constructor(props) {
@@ -12,8 +13,8 @@ class MyFollowers extends React.Component {
 
 	render () {
 		return (
-		   <div>
-		   <p>You are being followed</p>
+			<div className="followersPost">
+		   <Post />
 		   </div>
 		);
 	}

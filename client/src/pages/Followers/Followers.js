@@ -24,6 +24,7 @@ class Followers extends React.Component {
         <div className="nav">
           <Nav />
         </div>
+        <div className="followersBody">
         <Row>
           <Col xs={6} size='md-4' md={4}>
             <SideBar />
@@ -33,6 +34,7 @@ class Followers extends React.Component {
             <MyFollowers />
           </Col>
         </Row>
+        </div>
       </div>
 
 

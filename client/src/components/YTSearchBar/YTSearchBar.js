@@ -1,4 +1,5 @@
 import React from 'react';
+import "./YTSearchBar.css";
 
 class YTSearchBar extends React.Component {
   constructor(props) {

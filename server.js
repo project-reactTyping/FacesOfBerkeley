@@ -1,7 +1,7 @@
 const express = require("express");
 const bodyParser = require("body-parser");
 const mongoose = require("mongoose");
-const morgan = require('morgan');
+const logger = require('morgan');
 var User = require('./models/user.js');
 const routes = require("./routes");
 const passport = require('passport');
@@ -9,26 +9,39 @@ const FacebookStrategy = require('passport-facebook').Strategy;
 const GoogleStrategy = require('passport-google-oauth20').Strategy;
 const keys = require('./config/keys');
 const app = express();
+const axios = require('axios');
 
-passport.use(
-  new GoogleStrategy(
-  {
-    clientID: keys.googleClientID,
-    clientSecret: keys.googleClientSecret,
-    callbackURL: "/auth/google/callback"
-  },
-  accessToken => {
-    console.log(accessToken);
-  })
-);
+// passport.use(
+//   new GoogleStrategy(
+//   {
+//     clientID: keys.googleClientID,
+//     clientSecret: keys.googleClientSecret,
+//     callbackURL: "/auth/google/callback"
+//   },
+//   accessToken => {
+//     console.log(accessToken);
+//   })
+// );
 
-app.get(
-  '/auth/google',
-  passport.authenticate('google', {
-    scope: ['profile', 'email']
-  })
-);
-
+// app.get(
+//   '/auth/google',
+//   passport.authenticate('google', {
+//     scope: ['profile', 'email']
+//   })
+// );
+// passport.use(new FacebookStrategy({
+//     clientID: keys.facebookClientID,
+//     clientSecret: keys.facebookClientSecret,
+//     callbackURL: "/auth/facebook/callback"
+//   },
+//   function(accessToken, refreshToken, profile, done) {
+//     User.findOrCreate( function(err, user) {
+//       if (err) { return done(err); }
+//       done(null, user);
+//     });
+//   }
+// ));
+mongoose.Promise = Promise;
 
 const PORT = process.env.PORT || 3001;
 // Serve up static assets (usually on heroku)
@@ -41,7 +54,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 // Serve up static assets
 app.use(express.static("client/build"));
-app.use(morgan('combined'));
+app.use(logger('dev'));
 // Add routes, both API and view
 app.use(routes);
 app.use(passport.initialize());
@@ -49,19 +62,7 @@ app.use(passport.session());
 require('./routes/index.js')(app);
 require('./config/passport')(passport);
 
-passport.use(new FacebookStrategy({
-    clientID: keys.facebookClientID,
-    clientSecret: keys.facebookClientSecret,
-    callbackURL: "/auth/facebook/callback"
-  },
-  function(accessToken, refreshToken, profile, done) {
-    User.findOrCreate( function(err, user) {
-      if (err) { return done(err); }
-      done(null, user);
-    });
-  }
-));
-
+var User = require('./models/user.js');
 // Connect to the Mongo DB
 var db = process.env.MONGODB_URI || 'mongodb://localhost/FacesOfBerkeley/Profile';
 
@@ -73,7 +74,7 @@ mongoose.connect(db, function(error) {
     console.log('mongoose connection is successful');
   }
 });
-app.post(mongoose, (req, res) => {
+axios.post('/signup', (req, res) => {
   var newUser = new User(req.body);
   newUser.save((err, user) => {
     if (err) {
@@ -87,7 +88,7 @@ app.post(mongoose, (req, res) => {
   });
 });
 
-app.get(mongoose, (req, res) => {
+app.get('/signin', (req, res) => {
   console.log(req.body);
   newUser.find({})
   .exec(function(err, user) {

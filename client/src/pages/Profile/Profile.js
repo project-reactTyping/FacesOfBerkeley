@@ -1,9 +1,7 @@
 import React, { Component } from "react";
-import LogOut from "../../components/LogOut";
-import SearchBar from "../../components/SearchBar";
 import Col from "../../components/Grid/Col";
-import NavLinks from '../../components/NavLinks';
-import Post from '../../components/Post';
+import Row from "../../components/Grid/Row";
+import Nav from '../../components/Nav';
 import SideBar from '../../components/SideBar';
 import MyProfile from '../../components/MyProfile';
 import "./Profile.css";
@@ -20,29 +18,21 @@ class Profile extends Component {
 
   render() {
     return (
-      <div>
-
+      <div className="container container-user">
         <div className="nav">
-          <SearchBar />
-          <NavLinks text="Home" />
-          <NavLinks className="friends" text="Friends" />
-          <NavLinks text="Followers" />
-          <NavLinks text="Profile" />
-          <LogOut />
+          <Nav />
         </div>
-
-        <Col xs={6} size='md-4' md={4}>
-          <SideBar />
-        </Col>
-
-        <Col xs={12} size="md-8" md={8}>
-          <MyProfile />
-        </Col>
-
+        <div>
+          <Row>
+          <Col xs={6} size='md-3' md={3}>
+            <SideBar />
+          </Col>
+          <Col xs={12} size="md-9" md={9}>
+            <MyProfile />
+          </Col>
+          </Row>
+        </div>
     </div>
-
-
-
     );
   }
 }

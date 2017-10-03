@@ -9,6 +9,7 @@ class MyFriends extends React.Component {
       message: 'can u see me?'
     };
   }
+
   render() {
     return (
       <Post />

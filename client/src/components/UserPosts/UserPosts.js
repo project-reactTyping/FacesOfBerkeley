@@ -1,6 +1,5 @@
 import React from "react";
 import "./UserPosts.css";
-import axios from 'axios';
 
 class UserPosts extends React.Component {
 	constructor(props) {

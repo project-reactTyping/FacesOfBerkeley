@@ -1,6 +1,5 @@
 import React from "react";
 import "./MyProfile.css";
-import axios from 'axios';
 
 class MyProfile extends React.Component {
 	constructor(props) {
@@ -10,8 +9,6 @@ class MyProfile extends React.Component {
 		   	   profile: ''
 		   };
 	}
-
-
 
 	render () {
 		return (

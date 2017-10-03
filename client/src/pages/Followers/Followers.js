@@ -20,7 +20,7 @@ class Followers extends React.Component {
 
   render() {
     return (
-      <div>
+      <div className="container container-user">
         <div className="nav">
           <Nav />
         </div>

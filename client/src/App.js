@@ -11,6 +11,7 @@ import Friends from './pages/Friends';
 import MyFollowers from './pages/Followers';
 import OAuth from './pages/OAuth';
 import Profile from './pages/Profile';
+import Nav from './components/Nav';
 import './App.css';
 
 const App = () =>
@@ -29,6 +30,7 @@ const App = () =>
         <Route exact path="/user/followers" component={MyFollowers} />
         <Route exact path="/user/profile" component={Profile} />
         <Route exact path="/user/home" component={User} />
+        <Route exact path="/nav" component={Nav} />
       </Switch>
     </div>
   </Router>;

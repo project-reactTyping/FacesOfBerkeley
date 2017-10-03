@@ -4,7 +4,7 @@
 	border-color: #fff;
 }
 
-.searchForm {
-  float: left !important;
-  max-width: 25% !important;
+#searchForm {
+  float: left;
+  max-width: 25%;
 }

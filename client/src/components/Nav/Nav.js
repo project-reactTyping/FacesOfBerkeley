@@ -30,12 +30,14 @@ class Nav extends React.Component {
         </div>
         <div>
           <Row>
-          <Col xs={6} size='md-4' md={4}>
-          <SideBar />
+          <Col xs={4} size='md-3' md={3}>
+            <SideBar />
           </Col>
-          <Col xs={12} size="md-8" md={8}>
-          <PostContainer />
-
+          <Col xs={8} size="md-6" md={6}>
+            <PostContainer />
+          </Col>
+          <Col xs={4} size='md-3' md={3}>
+            <SideBar />
           </Col>
           </Row>
         </div>

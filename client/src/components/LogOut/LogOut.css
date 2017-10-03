@@ -1,8 +1,9 @@
 .logOut {
+	right: 0;
+	padding-right: 20px;
 	font-family: Tahoma;
 	/*font-size: 16px;*/
 	color: #fff;
-	margin-top: 15px;
 	float: right;
 	/*padding-left: 500px;*/
 	cursor: pointer;

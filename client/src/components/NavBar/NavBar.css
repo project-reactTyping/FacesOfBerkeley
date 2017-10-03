@@ -1,0 +1,10 @@
+.links {
+	padding: 15px;
+	font-family: Tahoma;
+	cursor: pointer;
+	color: #fff;
+}
+
+.links:hover {
+	color: #8b9dc3;
+}

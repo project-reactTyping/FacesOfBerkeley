@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import LogOut from "../../components/LogOut";
 import SearchBar from "../../components/SearchBar";
 import Col from "../../components/Grid/Col";
-import NavLinks from '../../components/NavLinks';
+import Nav from '../../components/Nav';
 import SideBar from '../../components/SideBar';
 
 import MyFollowers from '../../components/MyFollowers';
@@ -24,12 +24,7 @@ class Followers extends React.Component {
     return (
       <div>
         <div className="nav">
-          <SearchBar />
-          <NavLinks text="Home" />
-          <NavLinks className="friends" text="Friends" />
-          <NavLinks text="Followers" />
-          <NavLinks text="Profile" />
-          <LogOut />
+          <Nav />
         </div>
 
         <Col xs={6} size='md-4' md={4}>

@@ -3,7 +3,7 @@ import LogOut from "../../components/LogOut";
 import SearchBar from "../../components/SearchBar";
 import Col from "../../components/Grid/Col";
 import Row from "../../components/Grid/Row";
-import NavLinks from '../../components/NavLinks';
+import Nav from '../../components/Nav';
 import SideBar from '../../components/SideBar';
 import PostContainer from '../../components/PostContainer';
 import "./User.css";
@@ -25,12 +25,7 @@ class User extends Component {
       <div>
 
         <div className="nav">
-          <SearchBar />
-          <NavLinks text="Home" />
-          <NavLinks text="Friends" />
-          <NavLinks text="Followers" />
-          <NavLinks text="Profile" />
-          <LogOut />
+          <Nav />
         </div>
         <div>
           <Row>

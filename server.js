@@ -2,13 +2,9 @@ const express = require("express");
 const bodyParser = require("body-parser");
 const mongoose = require("mongoose");
 const routes = require("./routes");
-const router = require("express").Router();
 
-const keys = require('./config/keys');
 const app = express();
 var User = require('./models/user.js');
-
-mongoose.Promise = Promise;
 
 const PORT = process.env.PORT || 3001;
 // Serve up static assets (usually on heroku)
@@ -23,13 +19,13 @@ app.use(bodyParser.text());
 // Serve up static assets
 app.use(express.static("client/build"));
 // Add routes, both API and view
-app.use(routes);
-// app.get('/api/signup', function(req, res) {
-//   console.log('signup!!!!!!');
-//   res.json({ hey: 'hey'});
-// })
+// app.use(routes);
 
-// require('./routes/index.js')(app);
+app.get('/api/signup', function(req, res) {
+  console.log('signup!!!!!!');
+  res.json({ hey: 'hey'});
+})
+
 mongoose.Promise = global.Promise;
 // Connect to the Mongo DB
 var db = process.env.MONGODB_URI || 'mongodb://localhost/FacesOfBerkeley';
@@ -83,9 +79,7 @@ app.delete('/api/user/', function(req, res) {
 
 // Send every request to the React app
 // Define any API routes before this runs
-// app.get("*", function(req, res) {
-//   res.sendFile(path.join(__dirname, "./client/build/index.html"));
-// });
+
 app.get("*", function(req, res) {
   if ( process.env.NODE_ENV === 'production' ) {
     res.sendFile(__dirname + "/client/build/index.html");

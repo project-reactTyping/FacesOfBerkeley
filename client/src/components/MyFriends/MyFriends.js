@@ -16,7 +16,6 @@ class MyFriends extends React.Component {
     return (
       <div className="friendList">
       <NameBar />
-      
       </div>
     );
   }

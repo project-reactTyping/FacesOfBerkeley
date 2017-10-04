@@ -1,6 +1,7 @@
 import React from "react";
 // import Post from '../../components/Post';
 import NameBar from '../../components/NameBar';
+import UnFriend from '../../components/UnFriend';
 import './MyFriends.css';
 
 class MyFriends extends React.Component {
@@ -16,7 +17,7 @@ class MyFriends extends React.Component {
     return (
       <div className="friendList">
       <NameBar />
-      
+      <UnFriend />
       </div>
     );
   }

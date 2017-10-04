@@ -21,7 +21,7 @@ class Weather extends React.Component {
 	render() {
 	  return (
 
-	
+
   		<div className="weather">
 		  	<p><strong>City: </strong>{this.city}</p>
 		  	<p><strong>Current Temperature: </strong>{this.temp}</p>

@@ -1,13 +1,16 @@
 import React from 'react';
 import "./ToDoList.css";
 
-class ToDoList extends React.Component {
-	render() {
-	  	return (
-	  		<div>
-	  		</div>
-		);
-	}
-}
+const ToDoList = (props) => {
+  return (
+    <div>
+      <ul>
+        {
+          props.items.map((item, index) => <li key={index}>{item}</li>)
+        }
+      </ul>
+    </div>
+  )
+};
 
 export default ToDoList;

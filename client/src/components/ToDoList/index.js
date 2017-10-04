@@ -1,1 +1,1 @@
-export { default } from './ToDoList.js';
+export { default } from './ToDoList';

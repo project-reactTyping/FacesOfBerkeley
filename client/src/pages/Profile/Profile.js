@@ -5,6 +5,7 @@ import Nav from '../../components/Nav';
 import SideBar from '../../components/SideBar';
 // import MyProfile from '../../components/MyProfile';
 import UserProfile from '../../components/UserProfile';
+import MyPost from '../../components/MyPost';
 
 import "./Profile.css";
 
@@ -30,7 +31,7 @@ class Profile extends Component {
             <SideBar />
           </Col>
           <Col xs={12} size="md-9" md={9}>
-          <UserProfile />
+          <MyPost />
           </Col>
           </Row>
         </div>

@@ -3,7 +3,7 @@ import "./ToDoList.css";
 
 const ToDoList = (props) => {
   return (
-    <div>
+    <div className="container">
       <ul>
         {
           props.items.map((item, index) => <li key={index}>{item}</li>)

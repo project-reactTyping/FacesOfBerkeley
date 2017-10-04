@@ -25,7 +25,7 @@ class ToDo extends React.Component {
 
   render() {
     return(
-      <div>
+      <div className="container">
         <form className="Todo" onSubmit={this.onSubmit}>
           <input value={this.state.term} onChange={this.onChange} />
           <button>ToDo</button>

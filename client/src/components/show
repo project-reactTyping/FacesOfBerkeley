@@ -1,0 +1,13 @@
+MongoDB shell version v3.4.7
+connecting to: mongodb://127.0.0.1:27017
+MongoDB server version: 3.4.7
+Server has startup warnings: 
+2017-10-03T15:52:51.651-0700 I CONTROL  [initandlisten] 
+2017-10-03T15:52:51.652-0700 I CONTROL  [initandlisten] ** WARNING: Access control is not enabled for the database.
+2017-10-03T15:52:51.654-0700 I CONTROL  [initandlisten] **          Read and write access to data and configuration is unrestricted.
+2017-10-03T15:52:51.657-0700 I CONTROL  [initandlisten] 
+2017-10-03T15:52:51.662-0700 I CONTROL  [initandlisten] 
+2017-10-03T15:52:51.685-0700 I CONTROL  [initandlisten] ** WARNING: soft rlimits too low. Number of files is 256, should be at least 1000
+> [3G[J[3G> [3G[J[3G^C
+
+bye

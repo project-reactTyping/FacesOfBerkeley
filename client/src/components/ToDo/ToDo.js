@@ -13,6 +13,7 @@ class ToDo extends React.Component {
 
   onChange = (event) => {
     this.setState({ term: event.target.value});
+    console.log(event);
   }
   onSubmit = (event) => {
     event.preventDefault();
@@ -27,7 +28,7 @@ class ToDo extends React.Component {
       <div>
         <form className="Todo" onSubmit={this.onSubmit}>
           <input value={this.state.term} onChange={this.onChange} />
-          <button>Submit</button>
+          <button>ToDo</button>
         </form>
         <ToDoList items={this.state.items} />
       </div>

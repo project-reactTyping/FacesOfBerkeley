@@ -1,46 +1,13 @@
 const express = require("express");
 const bodyParser = require("body-parser");
 const mongoose = require("mongoose");
-const logger = require('morgan');
-var User = require('./models/user.js');
 const routes = require("./routes");
-const passport = require('passport');
-const FacebookStrategy = require('passport-facebook').Strategy;
-const GoogleStrategy = require('passport-google-oauth20').Strategy;
+const router = require("express").Router();
+
 const keys = require('./config/keys');
 const app = express();
-const axios = require('axios');
+var User = require('./models/user.js');
 
-// passport.use(
-//   new GoogleStrategy(
-//   {
-//     clientID: keys.googleClientID,
-//     clientSecret: keys.googleClientSecret,
-//     callbackURL: "/auth/google/callback"
-//   },
-//   accessToken => {
-//     console.log(accessToken);
-//   })
-// );
-
-// app.get(
-//   '/auth/google',
-//   passport.authenticate('google', {
-//     scope: ['profile', 'email']
-//   })
-// );
-// passport.use(new FacebookStrategy({
-//     clientID: keys.facebookClientID,
-//     clientSecret: keys.facebookClientSecret,
-//     callbackURL: "/auth/facebook/callback"
-//   },
-//   function(accessToken, refreshToken, profile, done) {
-//     User.findOrCreate( function(err, user) {
-//       if (err) { return done(err); }
-//       done(null, user);
-//     });
-//   }
-// ));
 mongoose.Promise = Promise;
 
 const PORT = process.env.PORT || 3001;
@@ -50,21 +17,22 @@ if (process.env.NODE_ENV === "production") {
 }
 
 // Configure body parser for AJAX requests
-app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
+app.use(bodyParser.text());
 // Serve up static assets
 app.use(express.static("client/build"));
-app.use(logger('dev'));
 // Add routes, both API and view
 app.use(routes);
-app.use(passport.initialize());
-app.use(passport.session());
-require('./routes/index.js')(app);
-require('./config/passport')(passport);
+// app.get('/api/signup', function(req, res) {
+//   console.log('signup!!!!!!');
+//   res.json({ hey: 'hey'});
+// })
 
-var User = require('./models/user.js');
+// require('./routes/index.js')(app);
+mongoose.Promise = global.Promise;
 // Connect to the Mongo DB
-var db = process.env.MONGODB_URI || 'mongodb://localhost/FacesOfBerkeley/Profile';
+var db = process.env.MONGODB_URI || 'mongodb://localhost/FacesOfBerkeley';
 
 mongoose.connect(db, function(error) {
   if (error) {
@@ -74,39 +42,57 @@ mongoose.connect(db, function(error) {
     console.log('mongoose connection is successful');
   }
 });
-axios.post('/signup', (req, res) => {
-  var newUser = new User(req.body);
-  newUser.save((err, user) => {
-    if (err) {
-      res.send(err);
-      console.log('user did not save');
-    } else {
-      res.send(user);
-      console.log('user has been saved');
-      res.redirect('/user');
-    }
-  });
-});
 
-app.get('/signin', (req, res) => {
-  console.log(req.body);
-  newUser.find({})
-  .exec(function(err, user) {
+app.get('/api/user', function(req, res) {
+  User.find({})
+  .exec(function(err, doc) {
     if (err) {
       console.log(err);
     }
     else {
-      res.send(user);
-      res.redirect('/user');
+      res.send(doc);
     }
-  })
+  });
 });
+
+app.post('/api/user', function(req, res) {
+  var newUser = new User(req.body);
+  console.log(req.body);
+  newUser.save(function(err, doc) {
+    if (err) {
+      console.log(err);
+    }
+    else {
+      res.send(doc);
+    }
+  });
+});
+
+app.delete('/api/user/', function(req, res) {
+  var url = req.param('url');
+  User.find({ url: url }).remove().exec(
+    function(err) {
+      if (err) {
+        console.log(err);
+      }
+      else {
+        res.send('deleted');
+      }
+    });
+});
+
 // Send every request to the React app
 // Define any API routes before this runs
 // app.get("*", function(req, res) {
 //   res.sendFile(path.join(__dirname, "./client/build/index.html"));
 // });
-
+app.get("*", function(req, res) {
+  if ( process.env.NODE_ENV === 'production' ) {
+    res.sendFile(__dirname + "/client/build/index.html");
+  } else {
+    res.sendFile(__dirname + "/client/public/index.html");
+  }
+});
 // Start the API server
 app.listen(PORT, function() {
   console.log(`🌎  ==> API Server now listening on PORT ${PORT}!`);

@@ -23,7 +23,7 @@ class SignUpForm extends React.Component {
     if (password.length < 6) {
       return this.setState({error: 'Password must be more than 5 characters long'});
     }
-    axios.post('/signup', { first_name, last_name, email, password })
+    axios.post('/api/user', { first_name, last_name, email, password })
           .then((result) => {
             console.log(result.data);
           });

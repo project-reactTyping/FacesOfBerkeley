@@ -26,7 +26,7 @@ class Friends extends Component {
         </div>
         <div className="body">
           <Row>
-          <Col xs={6} size='</md-3>' md={3}>
+          <Col xs={6} size='md-3' md={3}>
             <SideBar />
           </Col>
           <Col xs={12} size="md-9" md={9}>

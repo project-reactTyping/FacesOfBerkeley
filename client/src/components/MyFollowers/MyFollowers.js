@@ -1,6 +1,5 @@
 import React from "react";
 import "./MyFollowers.css";
-// import Post from "../../components/Post";
 import NameBar from '../../components/NameBar';
 import UnFollow from '../../components/UnFollow';
 

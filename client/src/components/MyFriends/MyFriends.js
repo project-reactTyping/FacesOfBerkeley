@@ -17,7 +17,9 @@ class MyFriends extends React.Component {
     return (
       <div className="friendList">
       <NameBar />
+
       <UnFriend />
+
       </div>
     );
   }

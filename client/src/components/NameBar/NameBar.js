@@ -4,6 +4,7 @@ import UserPosts from "../../components/UserPosts";
 
 const NameBar = props => (
 	<div className="nameBar">
+
       <textarea>
       </textarea>
 	</div>

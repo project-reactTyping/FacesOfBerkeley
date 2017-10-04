@@ -1,5 +1,6 @@
 import React from "react";
-import Post from '../../components/Post';
+// import Post from '../../components/Post';
+import NameBar from '../../components/NameBar';
 import './MyFriends.css';
 
 class MyFriends extends React.Component {
@@ -13,8 +14,9 @@ class MyFriends extends React.Component {
 
   render() {
     return (
-      <div className="friendPost">
-      <Post />
+      <div className="friendList">
+      <NameBar />
+      
       </div>
     );
   }

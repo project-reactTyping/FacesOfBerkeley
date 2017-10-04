@@ -6,11 +6,6 @@ const apiRoutes = require("./API");
   // API Routes
   router.use("/api", apiRoutes);
 
-  router.get('/api/signup', function(req, res) {
-    console.log('signup!!!!!!');
-    res.json({ hey: 'hey'});
-  })
-
   /* GET home page. */
   router.get('/', function(req, res, next) {
     res.render('index');

@@ -29,16 +29,12 @@ class Followers extends React.Component {
           <Col xs={6} size='md-3' md={3}>
             <SideBar />
           </Col>
-
-          <Col xs={12} size='md-8' md={8}>
+          <Col xs={12} size='md-9' md={9}>
             <MyFollowers />
           </Col>
         </Row>
         </div>
       </div>
-
-
-
     );
   }
 }

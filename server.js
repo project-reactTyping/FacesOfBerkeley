@@ -4,7 +4,7 @@ const mongoose = require("mongoose");
 const routes = require("./routes");
 
 const app = express();
-var User = require('./models/user.js');
+var User = require('./models/users.js');
 
 const PORT = process.env.PORT || 3001;
 // Serve up static assets (usually on heroku)

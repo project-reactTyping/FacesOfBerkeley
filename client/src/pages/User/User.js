@@ -5,11 +5,13 @@ import Nav from '../../components/Nav';
 import SideBar from '../../components/SideBar';
 import PostContainer from '../../components/PostContainer';
 import YouTube from '../../components/YouTube';
+import Cookies from 'universal-cookie';
+
 import "./User.css";
 
 
-
 class User extends Component {
+
 
   componentDidMount() {
     this.loadUsers();
@@ -18,6 +20,13 @@ class User extends Component {
   loadUsers = () => {
 
   };
+
+  componentWillMount() {
+    const cookies = new Cookies();
+    // cookies.set('myCat', 'Pacman', { path: '/' });
+    console.log(cookies.get('currentUser'));
+
+  }
 
   render() {
     return (

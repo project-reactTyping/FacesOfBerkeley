@@ -31,6 +31,7 @@ class Profile extends Component {
             <SideBar />
           </Col>
           <Col xs={12} size="md-9" md={9}>
+          <UserProfile />
           <MyPost />
           </Col>
           </Row>

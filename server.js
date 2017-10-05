@@ -4,7 +4,7 @@ const mongoose = require("mongoose");
 const routes = require("./routes");
 
 const app = express();
-var User = require('./models/users.js');
+var User = require('./models/user.js');
 
 const PORT = process.env.PORT || 3001;
 // Serve up static assets (usually on heroku)
@@ -21,10 +21,11 @@ app.use(express.static("client/build"));
 // Add routes, both API and view
 // app.use(routes);
 
-app.get('/api/signup', function(req, res) {
-  console.log('signup!!!!!!');
-  res.json({ hey: 'hey'});
-})
+// below code worked when christian ran it in class
+// app.get('/api/signup', function(req, res) {
+//   console.log('signup!!!!!!');
+//   res.json({ hey: 'hey'});
+// })
 
 mongoose.Promise = global.Promise;
 // Connect to the Mongo DB
@@ -65,8 +66,8 @@ app.post('/api/user', function(req, res) {
 });
 
 app.delete('/api/user/', function(req, res) {
-  var url = req.param('url');
-  User.find({ url: url }).remove().exec(
+  var id = req.param('id');
+  User.find({ id: id }).remove().exec(
     function(err) {
       if (err) {
         console.log(err);

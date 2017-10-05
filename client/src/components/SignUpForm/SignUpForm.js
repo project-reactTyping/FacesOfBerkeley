@@ -1,6 +1,6 @@
 import React from 'react';
 import './SignUpForm.css';
-import axios from 'axios';
+import helpers from '../../utils/helpers';
 
 class SignUpForm extends React.Component {
   constructor(props) {
@@ -23,11 +23,10 @@ class SignUpForm extends React.Component {
     if (password.length < 6) {
       return this.setState({error: 'Password must be more than 5 characters long'});
     }
-    axios.post('/api/user', { first_name, last_name, email, password })
-          .then((result) => {
-            console.log(result.data);
-          });
-    first_name = first_name.val('');
+    helpers.saveUser(first_name, last_name, email, password)
+      .then(function(){
+        console.log(first_name);
+      });
 
   }
 

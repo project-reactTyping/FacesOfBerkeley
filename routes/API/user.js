@@ -5,13 +5,13 @@ const axios = require("axios");
 
 
 // Matches with "/API/user"
-router.route("/")
+router.route("/api/user")
   .get(usersController.findAll)
   .post(usersController.create);
 
 //  Matches with "/API/user/:id"
 router
-  .route("/:id")
+  .route("/api/user/:id")
   .get(usersController.findById)
   .put(usersController.update)
   .delete(usersController.remove);

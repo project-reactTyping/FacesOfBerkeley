@@ -1,12 +1,16 @@
 import React from "react";
 import "./Signin.css";
 import axios from 'axios';
+import { Redirect } from 'react-router';
+import Cookies from 'universal-cookie';
+
 
 class Signin extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      error: ''
+      error: '',
+      redirect: false
     };
   }
 
@@ -15,7 +19,7 @@ class Signin extends React.Component {
 
     let email = this.refs.email.value.trim();
     let password = this.refs.password.value.trim();
-
+    let realThis = this;
     axios.get('/api/user', {
       params: {
         email: email,
@@ -23,8 +27,10 @@ class Signin extends React.Component {
       }
     })
     .then(function (response) {
-
-      console.log(response);
+      realThis.setState({ redirect: true })
+      const cookies = new Cookies();
+      cookies.set('currentUser', response.data[0]);
+      console.log(cookies.get('currentUser'));
     })
     .catch(function (error) {
       console.log(error);
@@ -34,6 +40,10 @@ class Signin extends React.Component {
   }
 
   render() {
+    const { redirect } = this.state;
+    if (redirect) {
+      return <Redirect to='/user'/>;
+    }
     return (
       <div className="boxed-view">
         <div className="boxed-view__box">

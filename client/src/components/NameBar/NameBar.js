@@ -3,6 +3,9 @@ import "./NameBar.css";
 
 const NameBar = props => (
 	<div className="nameBar">
+
+      <textarea>
+      </textarea>
 	</div>
 	);
 

@@ -3,6 +3,8 @@ import Col from "../../components/Grid/Col";
 import Row from "../../components/Grid/Row";
 import Nav from '../../components/Nav';
 import SideBar from '../../components/SideBar';
+// import NameBar from '../../components/NameBar';
+// import UnFriend from '../../components/UnFriend';
 import MyFriends from '../../components/MyFriends';
 import "./Friends.css";
 
@@ -10,13 +12,13 @@ import "./Friends.css";
 
 class Friends extends Component {
 
-  componentDidMount() {
-    this.loadUsers();
-  }
+  // componentDidMount() {
+  //   this.loadUsers();
+  // }
 
-  loadUsers = () => {
+  // loadUsers = () => {
 
-  };
+  // };
 
   render() {
     return (

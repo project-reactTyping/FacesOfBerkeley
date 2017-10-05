@@ -1,6 +1,7 @@
 import React from "react";
 import "./MyFollowers.css";
 import NameBar from '../../components/NameBar';
+import UnFollow from '../../components/UnFollow';
 
 class MyFollowers extends React.Component {
 	constructor(props) {
@@ -15,6 +16,7 @@ class MyFollowers extends React.Component {
 		return (
 			<div className="followersList">
 			   <NameBar />
+			   <UnFollow />
 		   </div>
 		);
 	}

@@ -2,6 +2,7 @@ import React from 'react';
 import './SignUpForm.css';
 import helpers from '../../utils/helpers';
 import { Route, Redirect } from 'react-router';
+import Cookies from 'universal-cookie';
 
 class SignUpForm extends React.Component {
   constructor(props) {
@@ -11,7 +12,8 @@ class SignUpForm extends React.Component {
       first_name: '',
       last_name: '',
       email: '',
-      password: ''
+      password: '',
+      redirect: false
     };
   }
 
@@ -22,6 +24,7 @@ class SignUpForm extends React.Component {
 
   handleSubmit = (e) => {
     console.log('im called');
+    let realThis = this;
     e.preventDefault();
     let first_name = this.state.first_name.trim();
     let last_name = this.state.last_name.trim();
@@ -31,11 +34,11 @@ class SignUpForm extends React.Component {
       return this.setState({error: 'Password must be more than 5 characters long'});
     }
     helpers.saveUser(first_name, last_name, email, password)
-      .then(function(){
-        console.log(first_name);
-        return (
-          <Redirect to="/user"/>
-        )
+      .then(function(response){
+        realThis.setState({ redirect: true})
+        const cookies = new Cookies;
+        cookies.set('currentUser', response.data[0]);
+        console.log(cookies.get('currentUser'));
       });
 
   }
@@ -55,6 +58,10 @@ class SignUpForm extends React.Component {
   }
 
   render() {
+    const { redirect } = this.state;
+    if (redirect) {
+      return <Redirect to='/user' />
+    }
     return (
       <div className="container-signup">
         <div className="container-view">

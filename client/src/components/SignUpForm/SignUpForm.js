@@ -1,6 +1,7 @@
 import React from 'react';
 import './SignUpForm.css';
 import helpers from '../../utils/helpers';
+import { Route, Redirect } from 'react-router';
 
 class SignUpForm extends React.Component {
   constructor(props) {
@@ -14,7 +15,13 @@ class SignUpForm extends React.Component {
     };
   }
 
+  handleFirstNameChange = (event) => {
+    this.setState({first_name: event.target.value});
+    console.log(event);
+  }
+
   handleSubmit = (e) => {
+    console.log('im called');
     e.preventDefault();
     let first_name = this.state.first_name.trim();
     let last_name = this.state.last_name.trim();
@@ -26,14 +33,14 @@ class SignUpForm extends React.Component {
     helpers.saveUser(first_name, last_name, email, password)
       .then(function(){
         console.log(first_name);
+        return (
+          <Redirect to="/user"/>
+        )
       });
 
   }
 
-  handleFirstNameChange = (event) => {
-    this.setState({first_name: event.target.value});
-    console.log(event);
-  }
+
   handleLastNameChange = (event) => {
     this.setState({last_name: event.target.value});
     console.log(event);
@@ -56,7 +63,7 @@ class SignUpForm extends React.Component {
 
           {this.state.error && <p>{this.state.error}</p>}
 
-          <form className="container-view-form" action="/signup" method="post">
+          <form onSubmit={this.handleSubmit} className="container-view-form" >
             <div className="field-line-first">
               <input type="first_name" name="first_name" onChange={this.handleFirstNameChange} placeholder="first name" />
             </div>
@@ -71,7 +78,7 @@ class SignUpForm extends React.Component {
             </div>
             <br />
             <div>
-              <input onSubmit={this.handleSubmit} type="submit" value="Sign Up"/>
+              <input type="submit" value="Sign Up"/>
             </div>
           </form>
         </div>

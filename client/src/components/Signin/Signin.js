@@ -23,6 +23,7 @@ class Signin extends React.Component {
       }
     })
     .then(function (response) {
+
       console.log(response);
     })
     .catch(function (error) {
@@ -41,7 +42,7 @@ class Signin extends React.Component {
           {this.state.error ? <p>{this.state.error}</p> : undefined}
 
 
-          <form className="boxed-view__form" action="/signin" method="post">
+          <form onSubmit={this.onSubmit} className="boxed-view__form">
             <div>
               <input type="email" ref="email" name="email" placeholder="Email"/>
             </div>
@@ -50,10 +51,9 @@ class Signin extends React.Component {
             </div>
             <br />
             <div>
-              <input onSubmit={this.onSubmit} type="submit" value="Log In"/>
+              <input type="submit" value="Log In"/>
             </div>
               <br />
-              <a href="/auth/facebook">Login with Facebook</a>
               <a href="/signup">Need an Account?</a>
           </form>
         </div>

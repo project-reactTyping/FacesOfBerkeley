@@ -41,12 +41,14 @@ mongoose.connect(db, function(error) {
 });
 
 app.get('/api/user', function(req, res) {
-  User.find({})
+  var email = req.param('email');
+  User.find({ email })
   .exec(function(err, doc) {
     if (err) {
       console.log(err);
     }
     else {
+      console.log('found a user:'+ req.email);
       res.send(doc);
     }
   });

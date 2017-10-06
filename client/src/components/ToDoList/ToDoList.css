@@ -1,9 +1,10 @@
 .todoList {
-	margin-left: -70px;
-	font-family: Roboto;
+	margin-left: -50px;
+	font-family: Tahoma;
 	font-size: 16px;
 	color: #000;
 	list-style: none;
+	margin-top: 15px;
 }
 
 .delete {
@@ -17,3 +18,15 @@
 	color: #3b5998;
 
 }
+
+.todoLinks {
+	position: relative;
+	float: right;
+	margin-right: 50px;
+}
+
+.todoLinks:hover {
+	cursor: pointer;
+	color: #00b200 !important;
+}
+

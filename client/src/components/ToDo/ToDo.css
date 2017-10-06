@@ -5,20 +5,27 @@
 	margin-left: -15px;
 	width: 220px;
 }*/
-.addTodo {
+/*.addTodo {
     font-family: Tahoma;
-}
-
-.addTodo:hover {
-	background-color: #3b5998;
-	color: #fff;
-}
-
-/*.todoContainer {
-	width: 180px;
 }*/
 
+.addTodo:hover {
+	cursor: pointer;
+	/*background-color: #939393;*/
+	/*border-color: #3b5998;*/
+	/*color: #fff;*/
+}
+
+.todoContainer {
+	margin-top: 50px;
+}
+
 .todoForm {
-	width: 220px;
+	width: 190px;
 	font-family: Tahoma;
 }
+
+.taskBtn {
+	visibility: hidden;;
+}
+

@@ -73,7 +73,7 @@ export default class Weather extends React.Component {
 
     return (
       <div className="weather-container">
-        <h4>Weather for { this.state.forecast.name }</h4>
+        <h3>Weather for { this.state.forecast.name }</h3>
         <div className="icon-container">
           <img src={src} className="icon"alt={this.state.forecast.weather[0].description} />
         </div>

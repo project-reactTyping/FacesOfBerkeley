@@ -4,9 +4,9 @@ import "./ToDoList.css";
 const ToDoList = (props) => {
   return (
     <div className="container">
-      <ul>
+      <ul className="todoList">
         {
-          props.items.map((item, index) => <li key={index}>{item}</li>)
+          props.items.map((item, index) => <div> <li key={index}>{item} <input type="button" className="delete" value="X"/> </li></div>)
         }
       </ul>
     </div>

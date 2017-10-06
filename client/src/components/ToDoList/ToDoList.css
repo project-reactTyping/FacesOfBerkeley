@@ -1,0 +1,19 @@
+.todoList {
+	margin-left: -70px;
+	font-family: Roboto;
+	font-size: 16px;
+	color: #000;
+	list-style: none;
+}
+
+.delete {
+	font-size: 10px;
+	/*text-decoration: none;*/
+	/*margin-left: 120px;*/
+	border-style: none;
+}
+
+.delete:hover {
+	color: #3b5998;
+
+}

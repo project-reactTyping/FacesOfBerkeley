@@ -35,7 +35,7 @@ class SignUpForm extends React.Component {
     helpers.saveUser(first_name, last_name, email, password)
       .then(function(response){
         realThis.setState({ redirect: true})
-        const cookies = new Cookies();
+        const cookies = new Cookies;
         cookies.set('currentUser', response);
         console.log(cookies.get('currentUser'));
       });
@@ -84,7 +84,7 @@ class SignUpForm extends React.Component {
             </div>
             <br />
             <div>
-              <input type="submit" value="Sign Up"/>
+              <input id="signupBtn" type="submit" value="Sign Up"/>
             </div>
           </form>
         </div>

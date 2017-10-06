@@ -3,3 +3,17 @@
   height: 100px;
   float:right;
 }
+
+.weather-container {
+	color: #000;
+	font-family: Roboto;
+	margin-bottom: 60px;
+}
+
+
+h3 {
+	font-size: 25px;
+	margin-bottom: 40px;
+	margin-top: 83px;
+
+}

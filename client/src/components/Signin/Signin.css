@@ -34,3 +34,9 @@
   line-height: 1.2;
   text-transform: uppercase;
 }
+
+#loginBtn:hover {
+     color: #0000ff;
+     cursor: pointer;
+     /*background-color: #0000ff;*/
+}

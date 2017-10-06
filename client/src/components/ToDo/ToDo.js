@@ -28,7 +28,7 @@ class ToDo extends React.Component {
       <div className="container">
         <form className="Todo" onSubmit={this.onSubmit}>
           <input value={this.state.term} onChange={this.onChange} />
-          <button>[ + ]</button>
+          <button className="addTodo">Add ToDo</button>
         </form>
         <ToDoList items={this.state.items} />
       </div>

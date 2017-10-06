@@ -61,7 +61,7 @@ class Signin extends React.Component {
             </div>
             <br />
             <div>
-              <input type="submit" value="Log In"/>
+              <input id="loginBtn" type="submit" value="Log In"/>
             </div>
               <br />
               <a href="/signup">Need an Account?</a>

@@ -16,10 +16,12 @@ class MyPost extends React.Component {
   componentWillMount() {
     const userCookies = new Cookies();
     const userInfo = userCookies.get('currentUser');
-    console.log(userInfo);
     helpers.getPosts().then(function(response){
       console.log(response);
     });
+    helpers.getTodos().then(function(response){
+      console.log(response);
+    })
   }
 
   onChange = (event) => {
@@ -33,8 +35,8 @@ class MyPost extends React.Component {
       term: '',
       posts: [...this.state.posts, this.state.term]
     });
-    let post = this.state.posts;
-    console.log(post);
+    console.log(this.state.posts);
+    let post = this.state.term;
     helpers.savePost(post)
       .then(function(response){
         console.log(response);

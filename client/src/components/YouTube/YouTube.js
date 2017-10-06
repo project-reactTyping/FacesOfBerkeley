@@ -31,7 +31,7 @@ class YouTube extends Component {
   }
 
   render() {
-    const videoSearch = _.debounce((term) => {this.videoSearch(term) }, 200);
+    const videoSearch = _.debounce((term) => {this.videoSearch(term) }, 0);
 
     return (
       <div>

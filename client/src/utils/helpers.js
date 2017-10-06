@@ -37,7 +37,8 @@ const helpers = {
   getPosts: function() {
     return axios.get("/api/post")
       .then(function(results) {
-        console.log('axios results', results);
+        console.log('-------------');
+        console.log('all posts:', results);
         return results;
       });
   },
@@ -45,7 +46,7 @@ const helpers = {
   getPost: function(id) {
     return axios.get("/api/post/" + id)
       .then(function(results) {
-        console.log('axios results', results);
+        console.log('found this post:', results);
         return results;
       });
   },
@@ -59,8 +60,8 @@ const helpers = {
     console.log(post);
     return axios.post("/api/post", newpost)
       .then(function(response) {
-        console.log('axios results', response.data._id);
-        return response.data._id;
+        console.log('Post has saved: ', response.data);
+        return response;
       });
   },
 
@@ -68,7 +69,7 @@ const helpers = {
   getTodos: function() {
     return axios.get("/api/todo")
       .then(function(results) {
-        console.log('axios results', results);
+        console.log('all Todos:', results);
         return results;
       });
   },

@@ -12,14 +12,6 @@ import "./Friends.css";
 
 class Friends extends Component {
 
-  // componentDidMount() {
-  //   this.loadUsers();
-  // }
-
-  // loadUsers = () => {
-
-  // };
-
   render() {
     return (
       <div className="container container-user">

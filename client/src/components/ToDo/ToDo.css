@@ -1,6 +1,12 @@
-#todo {
-	margin-top: 40px;
+.Todo {
+	margin-top: 60px;
 	font-size: 14px;
 	font-family: Roboto;
-	width: 170px;
+	margin-left: -15px;
+	width: 220px;
+}
+
+.addTodo:hover {
+	background-color: #3b5998;
+	color: #fff;
 }

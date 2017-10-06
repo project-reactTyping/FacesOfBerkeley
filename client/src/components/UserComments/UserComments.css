@@ -1,4 +1,4 @@
-#comment {
+.comments {
 	width: 95%;
 	font-family: Roboto;
 	font-size: 14px;
@@ -10,5 +10,6 @@
 }
 
 #addComment:hover {
-	background-color: #8b9dc3;
+	background-color: #3b5998;
+	color: #fff;
 }

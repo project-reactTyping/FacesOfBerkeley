@@ -17,9 +17,10 @@ class Post extends React.Component {
 
 			axios.post('/post', { post: post})
 				.then((result) => {
-					post = post.val('');
+					// post = post.val('');
 					console.log(result.data);
 				});
+				return Post;
 		}
 
 		handlePostChange = (event) => {

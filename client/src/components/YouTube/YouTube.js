@@ -40,7 +40,7 @@ class YouTube extends Component {
         <h3>Video Details:</h3>
         <YTVideoDetail video={this.state.selectedVideo}/>
         <br />
-        <h3>Video List</h3>
+        <h3>Video List:</h3>
         <YTVideoList
         onVideoSelect={selectedVideo => this.setState({selectedVideo})}
         videos={this.state.videos} />

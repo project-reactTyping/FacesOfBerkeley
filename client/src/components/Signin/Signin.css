@@ -19,6 +19,7 @@
   padding: 2.4rem;
   text-align: center;
   width: 24rem;
+  background-color: #3b5998;
 }
 
 .boxed-view__form {
@@ -36,7 +37,24 @@
 }
 
 #loginBtn:hover {
-     color: #0000ff;
+     color: #3B5998;
      cursor: pointer;
-     /*background-color: #0000ff;*/
+}
+
+h2 {
+  font-family: Tahoma;
+  color: #fff;
+}
+
+a {
+  font-family: Tahoma;
+  color: #fff;
+}
+
+a:hover {
+  color: #8b9dc3;
+}
+
+input {
+  font-family: Tahoma;
 }

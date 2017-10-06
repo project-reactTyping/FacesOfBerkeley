@@ -1,12 +1,24 @@
-.Todo {
+/*.Todo {
 	margin-top: 60px;
 	font-size: 14px;
 	font-family: Roboto;
 	margin-left: -15px;
 	width: 220px;
+}*/
+.addTodo {
+    font-family: Tahoma;
 }
 
 .addTodo:hover {
 	background-color: #3b5998;
 	color: #fff;
+}
+
+/*.todoContainer {
+	width: 180px;
+}*/
+
+.todoForm {
+	width: 220px;
+	font-family: Tahoma;
 }

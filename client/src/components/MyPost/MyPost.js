@@ -13,6 +13,15 @@ class MyPost extends React.Component {
     };
   }
 
+  componentWillMount() {
+    const userCookies = new Cookies();
+    const userInfo = userCookies.get('currentUser');
+    console.log(userInfo);
+    helpers.getPosts().then(function(response){
+      console.log(response);
+    });
+  }
+
   onChange = (event) => {
     this.setState({term: event.target.value});
     console.log(event);
@@ -24,12 +33,11 @@ class MyPost extends React.Component {
       term: '',
       posts: [...this.state.posts, this.state.term]
     });
-    let post = this.state.post;
+    let post = this.state.posts;
+    console.log(post);
     helpers.savePost(post)
       .then(function(response){
-        const cookies = new Cookies();
-        cookies.set('currentPost', response);
-        console.log(cookies.get('currentPost'));
+        console.log(response);
       });
   }
 

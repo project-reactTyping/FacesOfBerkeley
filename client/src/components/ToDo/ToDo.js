@@ -1,5 +1,6 @@
 import React from "react";
 import ToDoList from '../../components/ToDoList';
+import helpers from '../../utils/helpers';
 import "./ToDo.css";
 
 class ToDo extends React.Component {
@@ -11,6 +12,11 @@ class ToDo extends React.Component {
     };
   }
 
+  componentWillMount() {
+    helpers.getTodos().then(function(response) {
+      console.log(response);
+    })
+  }
   onChange = (event) => {
     this.setState({ term: event.target.value});
     console.log(event);
@@ -21,6 +27,12 @@ class ToDo extends React.Component {
       term: '',
       items: [...this.state.items, this.state.term]
     });
+    let item = this.state.items;
+    console.log(item);
+    helpers.saveTodo(item)
+      .then(function(response){
+        console.log(response);
+      });
   }
 
   render() {

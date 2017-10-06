@@ -1,7 +1,7 @@
 import React from 'react';
 import './SignUpForm.css';
 import helpers from '../../utils/helpers';
-import { Route, Redirect } from 'react-router';
+import { Redirect } from 'react-router';
 import Cookies from 'universal-cookie';
 
 class SignUpForm extends React.Component {
@@ -23,7 +23,6 @@ class SignUpForm extends React.Component {
   }
 
   handleSubmit = (e) => {
-    console.log('im called');
     let realThis = this;
     e.preventDefault();
     let first_name = this.state.first_name.trim();

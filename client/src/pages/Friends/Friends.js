@@ -5,6 +5,7 @@ import Nav from '../../components/Nav';
 import SideBar from '../../components/SideBar';
 // import NameBar from '../../components/NameBar';
 // import UnFriend from '../../components/UnFriend';
+import Cookies from 'universal-cookie';
 import MyFriends from '../../components/MyFriends';
 import "./Friends.css";
 
@@ -12,6 +13,18 @@ import "./Friends.css";
 
 class Friends extends Component {
 
+  componentDidMount() {
+    this.loadUsers();
+  }
+
+  loadUsers = () => {
+
+  };
+  componentWillMount() {
+    const cookies = new Cookies();
+    console.log(cookies.get('currentUser'));
+
+  }
   render() {
     return (
       <div className="container container-user">

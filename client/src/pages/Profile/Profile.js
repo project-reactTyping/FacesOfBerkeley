@@ -3,7 +3,6 @@ import Col from "../../components/Grid/Col";
 import Row from "../../components/Grid/Row";
 import Nav from '../../components/Nav';
 import SideBar from '../../components/SideBar';
-// import MyProfile from '../../components/MyProfile';
 import UserProfile from '../../components/UserProfile';
 import MyPost from '../../components/MyPost';
 

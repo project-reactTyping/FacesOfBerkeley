@@ -6,7 +6,11 @@ const ToDoList = (props) => {
     <div className="container">
       <ul className="todoList">
         {
-          props.items.map((item, index) => <div> <li key={index}>{item} <input type="button" className="delete" value="X"/> </li></div>)
+          props.items.map((item, index) =>
+            <li key={index}>
+            {item}
+            <a> [x]</a>
+          </li>)
         }
       </ul>
     </div>

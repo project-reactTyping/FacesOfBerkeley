@@ -15,13 +15,12 @@ const App = () =>
         <Switch>
           <Route exact path="/" component={Login} />
           <Route exact path="/signup" component={SignUpForm} />
-            <CookiesProvider>
-
-          <Route exact path="/user" component={User} />
-            </CookiesProvider>
-          <Route exact path='/user/Friends' component={Friends} />
-          <Route exact path="/user/Followers" component={MyFollowers} />
-          <Route exact path="/user/Profile" component={Profile} />
+          <CookiesProvider>
+            <Route exact path="/user" component={User} />
+          </CookiesProvider>
+          <Route exact path='/user/Friends' component={User} />
+          <Route exact path="/user/Followers" component={User} />
+          <Route exact path="/user/Profile" component={User} />
           <Route exact path="/user/home" component={User} />
         </Switch>
       </div>

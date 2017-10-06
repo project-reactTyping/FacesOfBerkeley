@@ -23,12 +23,20 @@ const helpers = {
   },
   // Saves a user to the database
   saveUser: function(first_name, last_name, email, password) {
-    var newUser = {first_name: first_name, last_name: last_name, email: email, password: password};
+    var newUser = {first_name, last_name, email, password};
     console.log('user saved',first_name );
     return axios.post("/api/user", newUser)
       .then(function(response) {
         console.log('axios results', response.data._id);
         return response.data._id;
+      });
+  },
+  savePost: function(post) {
+    var newPost = {post};
+    console.log(post);
+    return axios.post('/api/user', newPost)
+      .then(function(response) {
+        console.log('axios results', response);
       });
   }
 };

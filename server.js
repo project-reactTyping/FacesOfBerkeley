@@ -125,7 +125,7 @@ app.delete('/api/post/', function(req, res) {
 
 // todo routes
 app.get('/api/todo', function(req, res) {
-  Todo.find({ id })
+  Todo.find({})
   .exec(function(err, doc) {
     if (err) {
       console.log(err);

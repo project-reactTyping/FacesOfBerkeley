@@ -1,7 +1,7 @@
 import React from 'react';
 import './SignUpForm.css';
 import helpers from '../../utils/helpers';
-import { Route, Redirect } from 'react-router';
+import { Redirect } from 'react-router';
 import Cookies from 'universal-cookie';
 
 class SignUpForm extends React.Component {
@@ -23,7 +23,6 @@ class SignUpForm extends React.Component {
   }
 
   handleSubmit = (e) => {
-    console.log('im called');
     let realThis = this;
     e.preventDefault();
     let first_name = this.state.first_name.trim();
@@ -36,8 +35,8 @@ class SignUpForm extends React.Component {
     helpers.saveUser(first_name, last_name, email, password)
       .then(function(response){
         realThis.setState({ redirect: true})
-        const cookies = new Cookies;
-        cookies.set('currentUser', response.data[0]);
+        const cookies = new Cookies();
+        cookies.set('currentUser', response);
         console.log(cookies.get('currentUser'));
       });
 

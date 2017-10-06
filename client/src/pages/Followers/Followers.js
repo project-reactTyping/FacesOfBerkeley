@@ -4,6 +4,7 @@ import Col from "../../components/Grid/Col";
 import Nav from '../../components/Nav';
 import SideBar from '../../components/SideBar';
 import MyFollowers from '../../components/MyFollowers';
+import Cookies from 'universal-cookie';
 import "./Followers.css";
 
 
@@ -17,6 +18,12 @@ class Followers extends React.Component {
   loadUsers = () => {
 
   };
+
+  componentWillMount() {
+    const cookies = new Cookies();
+    console.log(cookies.get('currentUser'));
+
+  }
 
   render() {
     return (

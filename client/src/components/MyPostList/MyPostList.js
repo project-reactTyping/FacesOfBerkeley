@@ -1,13 +1,11 @@
 import React from 'react';
-
+import './MyPostList.css';
 const MyPostList = (props) => {
   return (
-    <div className="container">
-      <ul>
+    <div className="">
         {
-          props.posts.map((post, index) => <li key={index}>{post}</li>)
+          props.posts.map((post, index) => <div className="containerUserPost"><p key={index}>{post}</p></div>)
         }
-      </ul>
     </div>
   )
 };

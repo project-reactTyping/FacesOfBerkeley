@@ -3,10 +3,10 @@ import Col from "../../components/Grid/Col";
 import Row from "../../components/Grid/Row";
 import Nav from '../../components/Nav';
 import SideBar from '../../components/SideBar';
-import PostContainer from '../../components/PostContainer';
+// import PostContainer from '../../components/PostContainer';
 import YouTube from '../../components/YouTube';
 import Cookies from 'universal-cookie';
-
+import MyPost from '../../components/MyPost';
 import "./User.css";
 
 
@@ -23,7 +23,6 @@ class User extends Component {
 
   componentWillMount() {
     const cookies = new Cookies();
-    // cookies.set('myCat', 'Pacman', { path: '/' });
     console.log(cookies.get('currentUser'));
 
   }
@@ -40,7 +39,7 @@ class User extends Component {
             <SideBar />
           </Col>
           <Col xs={12} size="md-5" md={5}>
-            <PostContainer />
+            <MyPost />
           </Col>
           <Col xs={6} size='md-4' md={4}>
             <YouTube />

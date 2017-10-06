@@ -1,5 +1,8 @@
 import React from 'react';
 import MyPostList from '../MyPostList';
+import helpers from '../../utils/helpers';
+import Cookies from 'universal-cookie';
+import './MyPost.css';
 
 class MyPost extends React.Component {
   constructor(props) {
@@ -19,8 +22,15 @@ class MyPost extends React.Component {
     event.preventDefault();
     this.setState({
       term: '',
-      items: [...this.state.posts, this.state.term]
+      posts: [...this.state.posts, this.state.term]
     });
+    let post = this.state.post;
+    helpers.savePost(post)
+      .then(function(response){
+        const cookies = new Cookies();
+        cookies.set('currentPost', response);
+        console.log(cookies.get('currentPost'));
+      });
   }
 
   render() {
@@ -28,12 +38,12 @@ class MyPost extends React.Component {
       <div className="container">
         <div className="container-mypost">
           <form className="MyPost" onSubmit={this.onSubmit}>
-            <input value={this.state.term} onChange={this.onChange} />
+            <textarea value={this.state.term} onChange={this.onChange}/>
             <button>post</button>
           </form>
-          </div>
-        <MyPostList posts={this.state.posts} />
-    </div>
+        </div>
+          <MyPostList posts={this.state.posts} />
+      </div>
     )
   }
 }

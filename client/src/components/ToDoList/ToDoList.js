@@ -9,7 +9,7 @@ const ToDoList = (props) => {
           props.items.map((item, index) =>
             <li key={index}>
             {item}
-            <a> [x]</a>
+            <a className="todoLinks"> ✓</a>
           </li>)
         }
       </ul>

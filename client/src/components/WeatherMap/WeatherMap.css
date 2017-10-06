@@ -1,7 +1,8 @@
 .icon {
-  width: 100px;
-  height: 100px;
+  width: 60px;
+  height: 60px;
   float:right;
+  margin-top: -10px;
 }
 
 .weather-container {

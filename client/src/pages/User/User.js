@@ -7,6 +7,7 @@ import SideBar from '../../components/SideBar';
 import YouTube from '../../components/YouTube';
 import Cookies from 'universal-cookie';
 import MyPost from '../../components/MyPost';
+import Footer from '../../components/Footer';
 import "./User.css";
 
 
@@ -46,6 +47,7 @@ class User extends Component {
           </Col>
           </Row>
         </div>
+        <Footer />
       </div>
     );
   }

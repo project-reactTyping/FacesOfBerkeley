@@ -35,11 +35,11 @@ class MyPost extends React.Component {
 
   render() {
     return(
-      <div className="container">
+      <div className="postContainer">
         <div className="container-mypost">
           <form className="MyPost" onSubmit={this.onSubmit}>
             <textarea value={this.state.term} onChange={this.onChange}/>
-            <button>post</button>
+            <button className="postBtn">post</button>
           </form>
         </div>
           <MyPostList posts={this.state.posts} />

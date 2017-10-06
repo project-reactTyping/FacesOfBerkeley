@@ -1,3 +1,15 @@
 textarea {
   width: 100%;
+  border-color: #d3d3d3;
+  font-family: Tahoma;
+  font-size: 16px;
+}
+
+.postContainer {
+	margin-top: 83px;
+}
+
+.postBtn:hover {
+	background-color: #3b5998;
+	color: #fff;
 }

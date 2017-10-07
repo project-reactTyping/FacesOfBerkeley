@@ -1,6 +1,5 @@
 import React from 'react';
 import './MyPostList.css';
-
 const MyPostList = (props) => {
   return (
     <div className="">

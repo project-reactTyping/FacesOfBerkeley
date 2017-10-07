@@ -1,20 +1,26 @@
 import React from 'react';
 import "./ToDoList.css";
 
-const ToDoList = (props) => {
-  return (
-    <div className="container">
-      <ul className="todoList">
-        {
-          props.items.map((item, index) =>
-            <li key={index}>
-            {item}
-            <a className="todoLinks"> ✓</a>
-          </li>)
-        }
-      </ul>
-    </div>
-  )
+class ToDoList extends React.Component {
+  removeItem(e) {
+    this.props.removeTodo(e);
+  }
+
+  render() {
+    return (
+      <div className="container">
+        <ul className="todoList">
+          {
+            this.props.items.map((item) =>
+              <li onClick={() => {this.removeItem(item)}} key={item}>
+              {item}
+              <a className="todoLinks"> ✓</a>
+            </li>)
+          }
+        </ul>
+      </div>
+    )
+  }
 };
 
 export default ToDoList;

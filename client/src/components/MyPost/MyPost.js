@@ -1,7 +1,7 @@
 import React from 'react';
 import MyPostList from '../MyPostList';
 import helpers from '../../utils/helpers';
-import Cookies from 'universal-cookie';
+// import Cookies from 'universal-cookie';
 import './MyPost.css';
 
 class MyPost extends React.Component {
@@ -14,15 +14,18 @@ class MyPost extends React.Component {
   }
 
   componentWillMount() {
-    const userCookies = new Cookies();
-    const userInfo = userCookies.get('currentUser');
-    helpers.getPosts().then(function(response){
-      console.log(response);
-    });
-    helpers.getTodos().then(function(response){
-      console.log(response);
-    })
+    // const userCookies = new Cookies();
+    // const userInfo = userCookies.get('currentUser');
   }
+
+  // componentDidMount(){
+  //   helpers.getPosts()
+  //     .then((res) => {
+  //       this.setState({posts: res.data});
+  //       console.log('all my posts: ' + res.data)
+  //       }
+  //     });
+  // }
 
   onChange = (event) => {
     this.setState({term: event.target.value});
@@ -40,6 +43,8 @@ class MyPost extends React.Component {
     helpers.savePost(post)
       .then(function(response){
         console.log(response);
+        // this.state.posts.push(response.data);
+        // this.setState({posts: this.state.data});
       });
   }
 

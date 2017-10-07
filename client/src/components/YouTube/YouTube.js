@@ -22,7 +22,7 @@ class YouTube extends Component {
   }
 
   videoSearch(term) {
-    YTSearch({key: API_KEY, term: term }, (videos) => {
+    YTSearch({key: API_KEY, term }, (videos) => {
       this.setState({
         videos: videos,
         selectedVideo: videos[0]
@@ -31,7 +31,7 @@ class YouTube extends Component {
   }
 
   render() {
-    const videoSearch = _.debounce((term) => {this.videoSearch(term) }, 200);
+    const videoSearch = _.debounce((term) => {this.videoSearch(term) }, 0);
 
     return (
       <div>

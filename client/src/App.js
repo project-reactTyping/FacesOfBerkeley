@@ -4,9 +4,6 @@ import { CookiesProvider } from 'react-cookie';
 import User from "./pages/User";
 import Login from './components/Signin';
 import SignUpForm from './components/SignUpForm';
-import Friends from './pages/Friends';
-import MyFollowers from './pages/Followers';
-import Profile from './pages/Profile';
 import './App.css';
 
 const App = () =>
@@ -18,10 +15,6 @@ const App = () =>
           <CookiesProvider>
             <Route exact path="/user" component={User} />
           </CookiesProvider>
-          <Route exact path='/user/Friends' component={User} />
-          <Route exact path="/user/Followers" component={User} />
-          <Route exact path="/user/Profile" component={User} />
-          <Route exact path="/user/home" component={User} />
         </Switch>
       </div>
     </Router>

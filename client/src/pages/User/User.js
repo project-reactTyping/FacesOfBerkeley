@@ -14,18 +14,17 @@ import "./User.css";
 class User extends Component {
 
 
-  componentDidMount() {
-    this.loadUsers();
-  }
+  // componentDidMount() {
+  //   this.loadUsers();
+  // }
 
-  loadUsers = () => {
+  // loadUsers = () => {
 
-  };
+  // };
 
   componentWillMount() {
     const cookies = new Cookies();
     console.log(cookies.get('currentUser'));
-
   }
 
   render() {

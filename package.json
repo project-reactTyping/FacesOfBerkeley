@@ -9,6 +9,7 @@
     "start": "./node_modules/.bin/concurrently \"./node_modules/.bin/nodemon\" \"npm run client\"",
     "build": "cd client && npm run build",
     "deploy": "yarn build && git add . && git commit -m \"Building for production\" && git push heroku master",
+    "heroku-postbuild": "cd client && npm install --only=dev && npm install && npm run build",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
@@ -25,14 +26,12 @@
   "dependencies": {
     "auth0-js": "^8.10.1",
     "auth0-lock": "^10.22.0",
-    "axios": "^0.16.2",
     "bcrypt-nodejs": "0.0.3",
     "body-parser": "^1.18.2",
     "connect-ensure-login": "^0.1.1",
     "cookie-parser": "^1.4.3",
     "express": "^4.15.5",
     "lodash": "^4.17.4",
-    "material-ui": "^0.19.2",
     "method-override": "^2.3.10",
     "mongoose": "^4.11.12",
     "pug": "^2.0.0-rc.4",

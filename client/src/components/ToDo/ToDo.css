@@ -8,7 +8,9 @@
 /*.addTodo {
     font-family: Tahoma;
 }*/
-
+.addTodo {
+	float: right;
+}
 .addTodo:hover {
 	cursor: pointer;
 	/*background-color: #939393;*/

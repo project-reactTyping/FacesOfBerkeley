@@ -1,7 +1,7 @@
 import React from 'react';
 import MyPostList from '../MyPostList';
 import helpers from '../../utils/helpers';
-import Cookies from 'universal-cookie';
+// import Cookies from 'universal-cookie';
 import './MyPost.css';
 
 class MyPost extends React.Component {
@@ -11,6 +11,19 @@ class MyPost extends React.Component {
       term: '',
       posts: []
     };
+  }
+
+  componentDidMount(){
+    helpers.getPosts()
+      .then((res) => {
+        console.log(res.data[0].post);
+        for (var i = res.data.length-1; i>=0; i--) {
+          this.state.posts.push(res.data[i].post);
+        }
+        console.log(this.state.posts);
+        this.setState({posts: this.state.posts});
+        console.log(this.state.posts);
+      });
   }
 
   onChange = (event) => {
@@ -24,12 +37,14 @@ class MyPost extends React.Component {
       term: '',
       posts: [...this.state.posts, this.state.term]
     });
-    let post = this.state.post;
+    console.log(this.state.posts);
+    let post = this.state.term;
+    this.state.posts.unshift(post);
+    this.setState({posts: this.state.posts});
+    console.log(this.state.posts);
     helpers.savePost(post)
       .then(function(response){
-        const cookies = new Cookies();
-        cookies.set('currentPost', response);
-        console.log(cookies.get('currentPost'));
+        console.log(response);
       });
   }
 
@@ -38,7 +53,7 @@ class MyPost extends React.Component {
       <div className="postContainer">
         <div className="container-mypost">
           <form className="MyPost" onSubmit={this.onSubmit}>
-            <textarea value={this.state.term} onChange={this.onChange}/>
+            <textarea rows="10" value={this.state.term} onChange={this.onChange}/>
             <button className="postBtn">post</button>
           </form>
         </div>

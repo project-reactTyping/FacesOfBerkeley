@@ -14,18 +14,32 @@ class MyPost extends React.Component {
   }
 
   componentWillMount() {
-    // const userCookies = new Cookies();
-    // const userInfo = userCookies.get('currentUser');
+    helpers.getPosts()
+      .then((res) => {
+        console.log(res.data[0].post);
+        let post = [];
+        for (var i = res.data.length-1; i>0; i--) {
+          this.state.posts.push(res.data[i].post);
+        }
+        console.log(this.state.posts);
+        this.setState({posts: this.state.posts});
+        console.log(this.state.posts);
+      });
   }
 
-  // componentDidMount(){
-  //   helpers.getPosts()
-  //     .then((res) => {
-  //       this.setState({posts: res.data});
-  //       console.log('all my posts: ' + res.data)
-  //       }
-  //     });
-  // }
+  componentDidMount(){
+    helpers.getPosts()
+      .then((res) => {
+        console.log(res.data[0].post);
+        let post = [];
+        for (var i = res.data.length-1; i>0; i--) {
+          this.state.posts.push(res.data[i].post);
+        }
+        console.log(this.state.posts);
+        this.setState({posts: this.state.posts});
+        console.log(this.state.posts);
+      });
+  }
 
   onChange = (event) => {
     this.setState({term: event.target.value});
@@ -40,11 +54,12 @@ class MyPost extends React.Component {
     });
     console.log(this.state.posts);
     let post = this.state.term;
+    this.state.posts.unshift(post);
+    this.setState({posts: this.state.posts});
+    console.log(this.state.posts);
     helpers.savePost(post)
       .then(function(response){
         console.log(response);
-        // this.state.posts.push(response.data);
-        // this.setState({posts: this.state.data});
       });
   }
 
@@ -53,7 +68,7 @@ class MyPost extends React.Component {
       <div className="postContainer">
         <div className="container-mypost">
           <form className="MyPost" onSubmit={this.onSubmit}>
-            <textarea value={this.state.term} onChange={this.onChange}/>
+            <textarea rows="10" value={this.state.term} onChange={this.onChange}/>
             <button className="postBtn">post</button>
           </form>
         </div>

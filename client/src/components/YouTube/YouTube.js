@@ -22,7 +22,7 @@ class YouTube extends Component {
   }
 
   videoSearch(term) {
-    YTSearch({key: API_KEY, term: term }, (videos) => {
+    YTSearch({key: API_KEY, term }, (videos) => {
       this.setState({
         videos: videos,
         selectedVideo: videos[0]

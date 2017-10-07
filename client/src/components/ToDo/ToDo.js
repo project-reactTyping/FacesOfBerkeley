@@ -21,7 +21,7 @@ class ToDo extends React.Component {
         // for (var i = response.data.length-1; i>=0; i--){
         //   this.state.items.push(response.data[i].todo);
         // }
-        console.log(this.state.items);
+        // console.log(this.state.items);
         // this.setState({items: this.state.items});
         // console.log(this.state.items);
     })

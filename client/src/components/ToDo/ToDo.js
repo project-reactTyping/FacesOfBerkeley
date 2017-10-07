@@ -12,14 +12,22 @@ class ToDo extends React.Component {
     };
   }
 
-  componentWillMount() {
-    helpers.getTodos().then(function(response) {
-      console.log(response);
+  componentDidMount() {
+    helpers.getTodos()
+      .then(function(response) {
+        console.log(response.data[0].todo);
+        console.log(response.data.length);
+        let todo = [];
+        // for (var i = response.data.length-1; i>=0; i--){
+        //   this.state.items.push(response.data[i].todo);
+        // }
+        console.log(this.state.items);
+        // this.setState({items: this.state.items});
+        // console.log(this.state.items);
     })
   }
   onChange = (event) => {
     this.setState({ term: event.target.value});
-    console.log(event);
   }
   removeTodo = (item) => {
     this.setState({ items: this.state.items.filter(el => el !== item)});
@@ -36,6 +44,8 @@ class ToDo extends React.Component {
     });
     let item = this.state.term;
     console.log(item);
+    this.state.items.unshift(item);
+    this.setState({items: this.state.items});
     helpers.saveTodo(item)
       .then(function(response){
         console.log(response);

@@ -13,26 +13,11 @@ class MyPost extends React.Component {
     };
   }
 
-  componentWillMount() {
-    helpers.getPosts()
-      .then((res) => {
-        console.log(res.data[0].post);
-        let post = [];
-        for (var i = res.data.length-1; i>0; i--) {
-          this.state.posts.push(res.data[i].post);
-        }
-        console.log(this.state.posts);
-        this.setState({posts: this.state.posts});
-        console.log(this.state.posts);
-      });
-  }
-
   componentDidMount(){
     helpers.getPosts()
       .then((res) => {
         console.log(res.data[0].post);
-        let post = [];
-        for (var i = res.data.length-1; i>0; i--) {
+        for (var i = res.data.length-1; i>=0; i--) {
           this.state.posts.push(res.data[i].post);
         }
         console.log(this.state.posts);

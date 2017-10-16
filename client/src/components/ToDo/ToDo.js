@@ -14,16 +14,13 @@ class ToDo extends React.Component {
 
   componentDidMount() {
     helpers.getTodos()
-      .then(function(response) {
-        console.log(response.data[0].todo);
-        console.log(response.data.length);
-        // for (var i = response.data.length-1; i>=0; i--){
-        //   this.state.items.push(response.data[i].todo);
-        // }
-        // console.log(this.state.items);
-        // this.setState({items: this.state.items});
-        // console.log(this.state.items);
-    })
+      .then((response) => {
+        for (var i = response.data.length-1; i>=0; i--){
+          this.state.items.push(response.data[i].todo);
+          console.log(this.state.items);
+        }
+        this.setState({items: this.state.items});
+    });
   }
   onChange = (event) => {
     this.setState({ term: event.target.value});

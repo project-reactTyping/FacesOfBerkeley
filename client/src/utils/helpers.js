@@ -83,6 +83,7 @@ const helpers = {
   },
   // Deletes the todo with the given id
   deleteTodo: function(id) {
+    console.log(id);
     return axios.delete("/api/todo/" + id);
   },
   // Saves a todo to the database
@@ -91,8 +92,8 @@ const helpers = {
     console.log('todo saved' );
     return axios.post("/api/todo", newTodo)
       .then(function(response) {
-        console.log('axios results', response.data._id);
-        return response.data._id;
+        console.log('axios results', response.data);
+        return response.data;
     });
 
   }

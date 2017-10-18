@@ -16,8 +16,9 @@ class ToDo extends React.Component {
     helpers.getTodos()
       .then((response) => {
         for (var i = response.data.length-1; i>=0; i--){
+          console.log(response.data[i]);
+          // this.state.items.push(response.data[i]);
           this.state.items.push(response.data[i].todo);
-          console.log(this.state.items);
         }
         this.setState({items: this.state.items});
     });
@@ -25,13 +26,18 @@ class ToDo extends React.Component {
   onChange = (event) => {
     this.setState({ term: event.target.value});
   }
+
   removeTodo = (item) => {
     this.setState({ items: this.state.items.filter(el => el !== item)});
-    // helpers.deleteTodo(item)
-    //   .then((res) => {
-    //     this.setState({items: res.data});
-    //   });
+    console.log(item);
+    console.log('removeTodo helper is triggered');
+    helpers.deleteTodo(item)
+      .then((res) => {
+        console.log(res);
+        this.setState({items: res.data});
+      });
   }
+
   onSubmit = (event) => {
     event.preventDefault();
     this.setState({
@@ -53,7 +59,7 @@ class ToDo extends React.Component {
       <div className="todoContainer">
         <form className="Todo" onSubmit={this.onSubmit}>
           <input placeholder=' add a task...' className="todoForm" value={this.state.term} onChange={this.onChange} />
-          <button className="addTodo"><span>✍</span></button>
+          <button className="addTodo"><span role="img" aria-label="delete">✍</span></button>
         </form>
         <ToDoList items={this.state.items} removeTodo={this.removeTodo}/>
       </div>

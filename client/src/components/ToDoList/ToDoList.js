@@ -11,8 +11,8 @@ class ToDoList extends React.Component {
       <div className="container">
         <ul className="todoList">
           {
-            this.props.items.map((item) =>
-              <li onClick={() => {this.removeItem(item)}} key={item}>
+            this.props.items.map((item, index) =>
+              <li onClick={() => {this.removeItem(item)}} className={"todo"+index} key={index}>
               {item}
               <a className="todoLinks"> ✓</a>
             </li>)

@@ -4,9 +4,9 @@ const MyPostList = (props) => {
   return (
     <div className="">
         {
-          props.posts.map((post) =>
-          <div className="containerUserPost">
-            <p key={post._id}>{post}</p>
+          props.posts.map((post, index) =>
+          <div className="containerUserPost" key={index}>
+            <p className={"myPost"+index} key={index}>{post}</p>
           </div>)
         }
     </div>

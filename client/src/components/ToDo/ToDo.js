@@ -8,34 +8,37 @@ class ToDo extends React.Component {
     super(props);
     this.state = {
       term: '',
+      _id: [],
       items: []
     };
   }
 
   componentDidMount() {
     helpers.getTodos()
-      .then(function(response) {
-        console.log(response.data[0].todo);
-        console.log(response.data.length);
-        let todo = [];
-        // for (var i = response.data.length-1; i>=0; i--){
-        //   this.state.items.push(response.data[i].todo);
-        // }
+      .then((response) => {
+        for (var i = response.data.length-1; i>=0; i--){
+          this.state._id.push(response.data[i]._id);
+          this.state.items.push(response.data[i].todo);
+        }
+        this.setState({items: this.state.items});
+        this.setState({_id: this.state._id});
+        console.log(this.state._id);
         console.log(this.state.items);
-        // this.setState({items: this.state.items});
-        // console.log(this.state.items);
-    })
+    });
   }
   onChange = (event) => {
     this.setState({ term: event.target.value});
   }
+
   removeTodo = (item) => {
     this.setState({ items: this.state.items.filter(el => el !== item)});
-    // helpers.deleteTodo(item)
-    //   .then((res) => {
-    //     this.setState({items: res.data});
-    //   });
+    helpers.deleteTodo(item)
+      .then((res) => {
+        console.log(res.data);
+        this.setState({items: res.data});
+      });
   }
+
   onSubmit = (event) => {
     event.preventDefault();
     this.setState({
@@ -57,9 +60,9 @@ class ToDo extends React.Component {
       <div className="todoContainer">
         <form className="Todo" onSubmit={this.onSubmit}>
           <input placeholder=' add a task...' className="todoForm" value={this.state.term} onChange={this.onChange} />
-          <button className="addTodo">Add Task</button>
+          <button className="addTodo"><span role="img" aria-label="delete">✍</span></button>
         </form>
-        <ToDoList items={this.state.items} removeTodo={this.removeTodo}/>
+        <ToDoList keys={this.state._id} items={this.state.items} removeTodo={this.removeTodo}/>
       </div>
     )
   }

@@ -16,13 +16,12 @@ class MyPost extends React.Component {
   componentDidMount(){
     helpers.getPosts()
       .then((res) => {
-        console.log(res.data[0].post);
-        for (var i = res.data.length-1; i>=0; i--) {
-          this.state.posts.push(res.data[i].post);
-        }
-        console.log(this.state.posts);
+        if (res.data[0]) {
+          for (var i = res.data.length-1; i>=0; i--) {
+            this.state.posts.push(res.data[i].post);
+          }
         this.setState({posts: this.state.posts});
-        console.log(this.state.posts);
+        }
       });
   }
 

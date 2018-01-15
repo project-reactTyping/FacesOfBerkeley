@@ -8,6 +8,7 @@ class ToDo extends React.Component {
     super(props);
     this.state = {
       term: '',
+      _id: [],
       items: []
     };
   }
@@ -16,11 +17,13 @@ class ToDo extends React.Component {
     helpers.getTodos()
       .then((response) => {
         for (var i = response.data.length-1; i>=0; i--){
-          console.log(response.data[i]);
-          // this.state.items.push(response.data[i]);
+          this.state._id.push(response.data[i]._id);
           this.state.items.push(response.data[i].todo);
         }
         this.setState({items: this.state.items});
+        this.setState({_id: this.state._id});
+        console.log(this.state._id);
+        console.log(this.state.items);
     });
   }
   onChange = (event) => {
@@ -29,11 +32,9 @@ class ToDo extends React.Component {
 
   removeTodo = (item) => {
     this.setState({ items: this.state.items.filter(el => el !== item)});
-    console.log(item);
-    console.log('removeTodo helper is triggered');
     helpers.deleteTodo(item)
       .then((res) => {
-        console.log(res);
+        console.log(res.data);
         this.setState({items: res.data});
       });
   }
@@ -61,7 +62,7 @@ class ToDo extends React.Component {
           <input placeholder=' add a task...' className="todoForm" value={this.state.term} onChange={this.onChange} />
           <button className="addTodo"><span role="img" aria-label="delete">✍</span></button>
         </form>
-        <ToDoList items={this.state.items} removeTodo={this.removeTodo}/>
+        <ToDoList keys={this.state._id} items={this.state.items} removeTodo={this.removeTodo}/>
       </div>
     )
   }

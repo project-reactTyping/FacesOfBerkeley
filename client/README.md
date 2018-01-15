@@ -1,3 +1,10 @@
+## Faces of Berkeley
+
+React app, inspired by facebook! When this app is done, it will have a social media aspect to it, ala facebook, but at the same time, have every day widgets so people will not lose track of time and still be productive! Widgets included so far: weather app that fetches current location/forecast, todo list, calendar, as well as a youtube search.
+
+
+
+
 This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
 
 Below you will find some information on how to perform common tasks.<br>

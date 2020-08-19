@@ -25,7 +25,7 @@
   },
   "dependencies": {
     "auth0-js": "^8.10.1",
-    "auth0-lock": "^10.22.0",
+    "auth0-lock": "^11.26.3",
     "bcrypt-nodejs": "0.0.3",
     "body-parser": "^1.18.2",
     "connect-ensure-login": "^0.1.1",
